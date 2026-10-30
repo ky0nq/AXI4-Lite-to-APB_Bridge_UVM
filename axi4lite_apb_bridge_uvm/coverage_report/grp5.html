@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Group :: bridge_pkg::bridge_coverage::abort_cg</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Group : bridge_pkg::bridge_coverage::abort_cg</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | <a href="groups.html" ><b>groups</b></a> | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Group : <a href="#"  onclick="showContent('bridge_pkg::bridge_coverage::abort_cg')">bridge_pkg::bridge_coverage::abort_cg</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td><b>SCORE</b></td><td>INSTANCES</td><td>WEIGHT</td><td>GOAL</td><td>AT LEAST</td><td>PER INSTANCE</td><td>AUTO BIN MAX</td><td>PRINT MISSING</td></tr><tr>
+<td class="s0 cl rt">  0.00</td>
+<td class="s0 cl rt">  0.00</td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">100   </td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">64    </td>
+<td class="wht cl rt">64    </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv')">/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>1 Instances:</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td><b>SCORE</b></td><td>WEIGHT</td><td>GOAL</td><td>AT LEAST</td><td>AUTO BIN MAX</td><td>PRINT MISSING</td></tr><tr>
+<td class="wht cl wordwrap"><a href="grp5.html#inst_tag_tb_top.me.obj.abort_cg"  onclick="showContent('tb_top.me.obj.abort_cg')">tb_top.me.obj.abort_cg</a></td>
+<td class="s0 cl rt">  0.00</td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">100   </td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">64    </td>
+<td class="wht cl rt">64    </td>
+</tr></table><br clear=all>
+<br clear=all>
+</div>
+<hr>
+<br clear=all>
+<span class=repname>Summary for Group   bridge_pkg::bridge_coverage::abort_cg
+</span>
+<br clear=all>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td><a href="#var_tbl_bridge_pkg::bridge_coverage::abort_cg" >Variables</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr><tr class="s0">
+<td><a href="#crs_tbl_bridge_pkg::bridge_coverage::abort_cg" >Crosses</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class="repname" id="var_tbl_bridge_pkg::bridge_coverage::abort_cg">Variables for Group  bridge_pkg::bridge_coverage::abort_cg
+</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">VARIABLE</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>GOAL</td><td>WEIGHT</td><td>AT LEAST</td><td>AUTO BIN MAX</td><td>COMMENT</td></tr><tr class="s0">
+<td><a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_direction"  onclick="checkLink(this)" target="detailFrame">cp_direction</a></td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr><tr class="s0">
+<td><a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_stage"  onclick="checkLink(this)" target="detailFrame">cp_stage</a></td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class="repname" id="crs_tbl_bridge_pkg::bridge_coverage::abort_cg">Crosses for Group  bridge_pkg::bridge_coverage::abort_cg
+</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CROSS</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>GOAL</td><td>WEIGHT</td><td>AT LEAST</td><td>PRINT MISSING</td><td>COMMENT</td></tr><tr class="s0">
+<td><a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.direction_stage"  onclick="checkLink(this)" target="detailFrame">direction_stage</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr></table><br clear=all>
+</div>
+<div name='tb_top.me.obj.abort_cg'>
+<a name="inst_tag_tb_top.me.obj.abort_cg"></a>
+<hr>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Group Instance : <a href="groups.html#tag_tb_top.me.obj.abort_cg" >tb_top.me.obj.abort_cg</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td><b>SCORE</b></td><td>WEIGHT</td><td>GOAL</td><td>AT LEAST</td><td>AUTO BIN MAX</td><td>PRINT MISSING</td></tr><tr>
+<td class="s0 cl rt">  0.00</td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">100   </td>
+<td class="wht cl rt">1     </td>
+<td class="wht cl rt">64    </td>
+<td class="wht cl rt">64    </td>
+</tr></table><br clear=all>
+<br clear=all>
+</div>
+<hr>
+<br clear=all>
+<span class=repname>Summary for Group Instance   tb_top.me.obj.abort_cg
+</span>
+<br clear=all>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td><a href="#var_tbl_tb_top.me.obj.abort_cg" >Variables</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr><tr class="s0">
+<td><a href="#crs_tbl_tb_top.me.obj.abort_cg" >Crosses</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class="repname" id="var_tbl_tb_top.me.obj.abort_cg">Variables for Group Instance  tb_top.me.obj.abort_cg
+</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">VARIABLE</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>GOAL</td><td>WEIGHT</td><td>AT LEAST</td><td>AUTO BIN MAX</td><td>COMMENT</td></tr><tr class="s0">
+<td><a href="#inst_tag_tb_top.me.obj.abort_cg.cp_direction"  onclick="checkLink(this)" target="detailFrame">cp_direction</a></td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr><tr class="s0">
+<td><a href="#inst_tag_tb_top.me.obj.abort_cg.cp_stage"  onclick="checkLink(this)" target="detailFrame">cp_stage</a></td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class="repname" id="crs_tbl_tb_top.me.obj.abort_cg">Crosses for Group Instance  tb_top.me.obj.abort_cg
+</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CROSS</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>GOAL</td><td>WEIGHT</td><td>AT LEAST</td><td>PRINT MISSING</td><td>COMMENT</td></tr><tr class="s0">
+<td><a href="#inst_tag_tb_top.me.obj.abort_cg.direction_stage"  onclick="checkLink(this)" target="detailFrame">direction_stage</a></td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">100</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td class="rt">0</td>
+<td></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='bridge_pkg::bridge_coverage::abort_cg'>
+<br clear=all>
+<a name="inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_direction"></a><span class="repname" id="inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_direction">Summary for Variable cp_direction</span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td>User Defined Bins</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>User Defined Bins for cp_direction</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td>write</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr><tr class="s3">
+<td>read</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr></table><br clear=all>
+<hr>
+<br clear=all>
+<a name="inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_stage"></a><span class="repname" id="inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_stage">Summary for Variable cp_stage</span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td>User Defined Bins</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>User Defined Bins for cp_stage</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td>pending_response</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr><tr class="s3">
+<td>pending_apb</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr></table><br clear=all>
+<hr>
+<br clear=all>
+<a name="inst_tag_bridge_pkg::bridge_coverage::abort_cg.direction_stage"></a><span class="repname" id="inst_tag_bridge_pkg::bridge_coverage::abort_cg.direction_stage">Summary for Cross direction_stage</span>
+<br clear=all>
+<br clear=all>
+Samples crossed: cp_direction cp_stage<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>MISSING</td></tr><tr class="s0">
+<td>Automatically Generated Cross Bins</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">4</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Automatically Generated Cross Bins for direction_stage</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">cp_direction</td><td class="alfsrt">cp_stage</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td align=center>*</td>
+<td align=center>*</td>
+<td align=center nowrap>--</td>
+<td align=center nowrap>--</td>
+<td class="rt">4</td>
+<td></td>
+</tr></table><br clear=all>
+</div>
+<div name='tb_top.me.obj.abort_cg'>
+<br clear=all>
+<a name="inst_tag_tb_top.me.obj.abort_cg.cp_direction"></a><span class="repname" id="inst_tag_tb_top.me.obj.abort_cg.cp_direction">Summary for Variable cp_direction</span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td>User Defined Bins</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>User Defined Bins for cp_direction</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td>write</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr><tr class="s3">
+<td>read</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr></table><br clear=all>
+<hr>
+<br clear=all>
+<a name="inst_tag_tb_top.me.obj.abort_cg.cp_stage"></a><span class="repname" id="inst_tag_tb_top.me.obj.abort_cg.cp_stage">Summary for Variable cp_stage</span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td></tr><tr class="s0">
+<td>User Defined Bins</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>User Defined Bins for cp_stage</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td>pending_response</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr><tr class="s3">
+<td>pending_apb</td>
+<td class="rt">0</td>
+<td class="rt">1</td>
+<td class="rt">1</td>
+<td></td>
+</tr></table><br clear=all>
+<hr>
+<br clear=all>
+<a name="inst_tag_tb_top.me.obj.abort_cg.direction_stage"></a><span class="repname" id="inst_tag_tb_top.me.obj.abort_cg.direction_stage">Summary for Cross direction_stage</span>
+<br clear=all>
+<br clear=all>
+Samples crossed: cp_direction cp_stage<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">CATEGORY</td><td>EXPECTED</td><td>UNCOVERED</td><td>COVERED</td><td>PERCENT</td><td>MISSING</td></tr><tr class="s0">
+<td>Automatically Generated Cross Bins</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">0</td>
+<td class="rt">0.00  </td>
+<td class="rt">4</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Automatically Generated Cross Bins for direction_stage</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Uncovered bins</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">cp_direction</td><td class="alfsrt">cp_stage</td><td>COUNT</td><td>AT LEAST</td><td>NUMBER</td><td class="alfsrt">STATUS</td></tr><tr class="s3">
+<td align=center>*</td>
+<td align=center>*</td>
+<td align=center nowrap>--</td>
+<td align=center nowrap>--</td>
+<td class="rt">4</td>
+<td></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="bridge_pkg::bridge_coverage::abort_cg">
+    <li>
+      <a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_direction">Variable : cp_direction</a>    </li>
+    <li>
+      <a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.cp_stage">Variable : cp_stage</a>    </li>
+    <li>
+      <a href="#inst_tag_bridge_pkg::bridge_coverage::abort_cg.direction_stage">Cross : direction_stage</a>    </li>
+  </ul>
+  <ul name="tb_top.me.obj.abort_cg">
+    <li>
+      <a href="#inst_tag_tb_top.me.obj.abort_cg.cp_direction">Variable : cp_direction</a>    </li>
+    <li>
+      <a href="#inst_tag_tb_top.me.obj.abort_cg.cp_stage">Variable : cp_stage</a>    </li>
+    <li>
+      <a href="#inst_tag_tb_top.me.obj.abort_cg.direction_stage">Cross : direction_stage</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

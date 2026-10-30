@@ -1,0 +1,2899 @@
+===============================================================================
+Module : APB_v1_0_S00_AXI
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 80.86  97.94  86.40  47.13  75.00  97.83 
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/rtl/APB_v1_0_S00_AXI.v
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                                
+ 85.23  97.94  86.40  68.99  75.00  97.83 tb_top.dut.APB_v1_0_S00_AXI_inst(x) 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : APB_v1_0_S00_AXI
+
+             Line No.   Total   Covered  Percent
+TOTAL                       97       95    97.94
+ALWAYS            193       10       10   100.00
+ALWAYS            221        4        4   100.00
+ALWAYS            238        5        5   100.00
+ALWAYS            321       11       11   100.00
+ALWAYS            355        7        7   100.00
+ALWAYS            381       11       11   100.00
+ALWAYS            442        9        9   100.00
+ALWAYS            463       12       12   100.00
+ALWAYS            484       28       26    92.86
+
+192                     	begin
+193        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+194        1/1          	      axi_awready <= 1'b0;
+195        1/1          	      aw_en <= 1'b1;
+196                     	  end 
+197                     	  else begin    
+198        1/1          	      if (write_grant) begin
+199                     	          // slave is ready to accept write address when 
+200                     	          // there is a valid write address and write data
+201                     	          // on the write address and data bus. This design 
+202                     	          // expects no outstanding transactions. 
+203        1/1          	          axi_awready <= 1'b1;
+204        1/1          	          aw_en <= 1'b0;
+205                     	        end
+206        1/1          	        else if (S_AXI_BREADY && axi_bvalid) begin
+207        1/1          	              aw_en <= 1'b1;
+208        1/1          	              axi_awready <= 1'b0;
+209                     	            end
+210                     	      else  begin
+211        1/1          	          axi_awready <= 1'b0;
+212                     	      end
+213                     	    end 
+214                     	end       
+215                     
+216                     	// Implement axi_awaddr latching
+217                     	// This process is used to latch the address when both 
+218                     	// S_AXI_AWVALID and S_AXI_WVALID are valid. 
+219                     
+220                     	always @( posedge S_AXI_ACLK ) begin
+221        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+222        1/1          	      axi_awaddr <= 0;
+223                     	    end 
+224                     	  else begin    
+225        1/1          	      if (write_grant) begin
+226                     	          // Write Address latching 
+227        1/1          	          axi_awaddr <= S_AXI_AWADDR;
+228                     	        end
+                        MISSING_ELSE
+229                     	    end 
+230                     	end       
+231                     
+232                     	// Implement axi_wready generation
+233                     	// axi_wready is asserted for one S_AXI_ACLK clock cycle when both
+234                     	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_wready is 
+235                     	// de-asserted when reset is low. 
+236                     
+237                     	always @( posedge S_AXI_ACLK ) begin
+238        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+239        1/1          	      axi_wready <= 1'b0;
+240                     	    end 
+241                     	  else begin    
+242        1/1          	      if (write_grant) begin
+243                     	          // slave is ready to accept write data when 
+244                     	          // there is a valid write address and write data
+245                     	          // on the write address and data bus. This design 
+246                     	          // expects no outstanding transactions. 
+247        1/1          	          axi_wready <= 1'b1;
+248                     	      end
+249        1/1          	      else begin axi_wready <= 1'b0; end
+250                     	    end 
+251                     	end       
+252                     
+253                     	// Implement memory mapped register select and write logic generation
+254                     	// The write data is accepted and written to memory mapped registers when
+255                     	// axi_awready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted. Write strobes are used to
+256                     	// select byte enables of slave registers while writing.
+257                     	// These registers are cleared when reset (active low) is applied.
+258                     	// Slave register write enable is asserted when valid address and data are available
+259                     	// and the slave is ready to accept the write address and write data.
+260                     	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
+261                     
+262                     	//always @( posedge S_AXI_ACLK )
+263                     	//begin
+264                     	//  if ( S_AXI_ARESETN == 1'b0 )
+265                     	//    begin
+266                     	//      slv_reg0 <= 0;
+267                     	//      slv_reg1 <= 0;
+268                     	//      slv_reg2 <= 0;
+269                     	//      slv_reg3 <= 0;
+270                     	//    end 
+271                     	//  else begin
+272                     	//    if (slv_reg_wren)
+273                     	//      begin
+274                     	//        case ( axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+275                     	//          2'h0:
+276                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+277                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+278                     	//                // Respective byte enables are asserted as per write strobes 
+279                     	//                // Slave register 0
+280                     	//                slv_reg0[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+281                     	//              end  
+282                     	//          2'h1:
+283                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+284                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+285                     	//                // Respective byte enables are asserted as per write strobes 
+286                     	//                // Slave register 1
+287                     	//                slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+288                     	//              end  
+289                     	//          2'h2:
+290                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+291                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+292                     	//                // Respective byte enables are asserted as per write strobes 
+293                     	//                // Slave register 2
+294                     	//                slv_reg2[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+295                     	//              end  
+296                     	//          2'h3:
+297                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+298                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+299                     	//                // Respective byte enables are asserted as per write strobes 
+300                     	//                // Slave register 3
+301                     	//                slv_reg3[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+302                     	//              end  
+303                     	//          default : begin
+304                     	//                      slv_reg0 <= slv_reg0;
+305                     	//                      slv_reg1 <= slv_reg1;
+306                     	//                      slv_reg2 <= slv_reg2;
+307                     	//                      slv_reg3 <= slv_reg3;
+308                     	//                    end
+309                     	//        endcase
+310                     	//      end
+311                     	//  end
+312                     	//end    
+313                     
+314                     	// Implement write response logic generation
+315                     	// The write response and response valid signals are asserted by the slave 
+316                     	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
+317                     	// This marks the acceptance of address and indicates the status of 
+318                     	// write transaction.
+319                     
+320                     	always @( posedge S_AXI_ACLK ) begin
+321        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+322        1/1          	      axi_bvalid  <= 0;
+323        1/1          	      axi_bresp   <= 2'b0;
+324                     	    end 
+325                     	  else begin    
+326                     	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        1/1          	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+328        1/1                        axi_bvalid <= 1'b1;
+329        1/1                        axi_bresp <= 2'b10;
+330                               end
+331        1/1                    else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+332                     	          // indicates a valid write response is available
+333        1/1          	          axi_bvalid <= 1'b1;
+334                     	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        1/1          	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+336                     	        end                   // work error responses in future
+337                     	      else begin
+338        1/1          	          if (S_AXI_BREADY && axi_bvalid) begin
+339                     	            //check if bready is asserted while bvalid is high) 
+340                     	            //(there is a possibility that bready is always asserted high)   
+341        1/1          	              axi_bvalid <= 1'b0; 
+342                     	          end  
+                        MISSING_ELSE
+343                     	        end
+344                     	    end
+345                     	end   
+346                     
+347                     	// Implement axi_arready generation
+348                     	// axi_arready is asserted for one S_AXI_ACLK clock cycle when
+349                     	// S_AXI_ARVALID is asserted. axi_awready is 
+350                     	// de-asserted when reset (active low) is asserted. 
+351                     	// The read address is also latched when S_AXI_ARVALID is 
+352                     	// asserted. axi_araddr is reset to zero on reset assertion.
+353                     
+354                     	always @( posedge S_AXI_ACLK ) begin
+355        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+356        1/1          	      axi_arready <= 1'b0;
+357        1/1          	      axi_araddr  <= 32'b0;
+358                     	  end 
+359                     	  else begin    
+360        1/1          	      if (read_grant) begin
+361                     	          // indicates that the slave has acceped the valid read address
+362        1/1          	          axi_arready <= 1'b1;
+363                     	          // Read address latching
+364        1/1          	          axi_araddr  <= S_AXI_ARADDR;
+365                     	        end
+366                     	      else begin
+367        1/1          	          axi_arready <= 1'b0;
+368                     	      end
+369                     	    end 
+370                     	end       
+371                     
+372                     	// Implement axi_arvalid generation
+373                     	// axi_rvalid is asserted for one S_AXI_ACLK clock cycle when both 
+374                     	// S_AXI_ARVALID and axi_arready are asserted. The slave registers 
+375                     	// data are available on the axi_rdata bus at this instance. The 
+376                     	// assertion of axi_rvalid marks the validity of read data on the 
+377                     	// bus and axi_rresp indicates the status of read transaction.axi_rvalid 
+378                     	// is deasserted on reset (active low). axi_rresp and axi_rdata are 
+379                     	// cleared to zero on reset (active low).  
+380                     	always @( posedge S_AXI_ACLK ) begin
+381        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+382        1/1          	      axi_rvalid <= 0;
+383        1/1          	      axi_rresp  <= 0;
+384                     	  end 
+385                     	  else begin    
+386                     	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        1/1          	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+388        1/1                        axi_rvalid <= 1'b1;
+389        1/1                        axi_rresp <= 2'b10;
+390                               end
+391        1/1                    else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+392                     	          // Valid read data is available at the read data bus
+393        1/1          	          axi_rvalid <= 1'b1;
+394                     	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        1/1          	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+396                     	      end   
+397        1/1          	      else if (axi_rvalid && S_AXI_RREADY) begin
+398                     	          // Read data is accepted by the master
+399        1/1          	          axi_rvalid <= 1'b0;
+400                     	      end                
+                        MISSING_ELSE
+401                     	    end
+402                     	end    
+403                     
+404                     	// Implement memory mapped register select and read logic generation
+405                     	// Slave register read enable is asserted when valid address is available
+406                     	// and the slave is ready to accept the read address.
+407                     	assign slv_reg_rden = axi_arready & S_AXI_ARVALID & ~axi_rvalid;
+408                     	//always @(*)
+409                     	//begin
+410                     	//      // Address decoding for reading registers
+411                     	//      case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+412                     	//        2'h0   : reg_data_out <= slv_reg0;
+413                     	//        2'h1   : reg_data_out <= slv_reg1;
+414                     	//        2'h2   : reg_data_out <= slv_reg2;
+415                     	//        2'h3   : reg_data_out <= slv_reg3;
+416                     	//        default : reg_data_out <= 0;
+417                     	//      endcase
+418                     	//end
+419                     
+420                     	// Output register or memory read data
+421                     	//always @( posedge S_AXI_ACLK )
+422                     	//begin
+423                     	//  if ( S_AXI_ARESETN == 1'b0 )
+424                     	//    begin
+425                     	//      axi_rdata  <= 0;
+426                     	//    end 
+427                     	//  else
+428                     	//    begin    
+429                     	//      // When there is a valid read address (S_AXI_ARVALID) with 
+430                     	//      // acceptance of read address by the slave (axi_arready), 
+431                     	//      // output the read dada 
+432                     	//      if (slv_reg_rden)
+433                     	//        begin
+434                     	//          axi_rdata <= reg_data_out;     // register read data
+435                     	//        end   
+436                     	//    end
+437                     	//end    
+438                     
+439                     	// Add user logic here
+440                     
+441                     	always @( posedge S_AXI_ACLK ) begin
+442        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+443        1/1                      PADDR <= 0;
+444        1/1                      apb_prot <= 0;
+445                             end
+446                     	    else begin    
+447        1/1          	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+448        1/1                          PADDR <= S_AXI_ARADDR;
+449        1/1                          apb_prot <= S_AXI_ARPROT;
+450                                 end
+451        1/1                      else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+452        1/1                          PADDR <= S_AXI_AWADDR;
+453        1/1                          apb_prot <= S_AXI_AWPROT;
+454                                 end
+                        MISSING_ELSE
+455                     	    end    
+456                     	end    
+457                     	
+458                         // ==== FIX (1/2): on write, select the upper/lower 16-bit byte lane using address[1] ====
+459                         // Previously it always looked only at S_AXI_WDATA[15:0]/WSTRB[1:0], but for
+460                         // non-word-aligned registers such as offset 2/6, the AXI spec puts the actual data on [31:16]/WSTRB[3:2],
+461                         // so the correct lane must be selected based on S_AXI_AWADDR[1].
+462                         always @( posedge S_AXI_ACLK ) begin
+463        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+464        1/1                      PWDATA <= 0;
+465        1/1                      PSTRB <= 0;
+466                             end
+467                             else begin
+468        1/1                      if (slv_reg_rden && (PSTATE == 2'b00)) begin
+469        1/1                          PWDATA <= 0;
+470        1/1                          PSTRB <= 0;
+471                                 end
+472        1/1                      else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+473        1/1                          if (S_AXI_AWADDR[1]) begin
+474        1/1                              PWDATA <= S_AXI_WDATA[31:16];
+475        1/1                              PSTRB  <= S_AXI_WSTRB[3:2];
+476                                     end else begin
+477        1/1                              PWDATA <= S_AXI_WDATA[15:0];
+478        1/1                              PSTRB  <= S_AXI_WSTRB[1:0];
+479                                     end
+480                                 end
+                        MISSING_ELSE
+481                             end
+482                         end
+483                         always @( posedge S_AXI_ACLK ) begin
+484        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+485        1/1                      PSTATE <= 0;
+486        1/1                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+487        1/1                      axi_rdata <= 0;
+488                             end
+489                             else begin
+490        1/1                      case (PSTATE)
+491                                     2'b00 : begin
+492        1/1                              if (slv_reg_rden) begin
+493        1/1                                  if (read_reject) begin
+494        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+495        1/1                                      axi_rdata <= 0;
+496                                             end else begin
+497        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b100;
+498        1/1                                      PSTATE <= 2'b01;
+499                                             end
+500                                         end
+501        1/1                              else if (slv_reg_wren) begin
+502        1/1                                  if (write_reject) begin
+503        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+504                                             end else begin
+505        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b101;
+506        1/1                                      PSTATE <= 2'b01;
+507                                             end
+508                                         end
+509        1/1                              else {PSEL,PENABLE,PWRITE} <= {3'b000};
+510                                     end
+511                                     2'b01 : begin
+512        1/1                                  {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+513        1/1                                  PSTATE <= 2'b10;
+514                                     end
+515                                     2'b10 : begin
+516        1/1                              if(PREADY == 1'b1)begin
+517        1/1                                  {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518        1/1                                  PSTATE <= 2'b00;
+519                                             // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                             // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                             // PADDR is already latched with the read address at this point, so it can be used as is.
+522        1/1                                  if(!PWRITE) begin
+523        1/1                                      if (PADDR[1])
+524        1/1                                          axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+525                                                 else
+526        1/1                                          axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+527                                             end
+                        MISSING_ELSE
+528                                         end
+                        MISSING_ELSE
+529                                     end
+530                                     default : begin
+531        0/1     ==>                          {PSEL,PENABLE,PWRITE} <= {3'b000};
+532        0/1     ==>                          PSTATE <= 2'b00;
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : APB_v1_0_S00_AXI
+
+               Total   Covered  Percent
+Conditions        125      108    86.40
+Logical           125      108    86.40
+Non-Logical         0        0
+Event               0        0
+
+ LINE       193
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       206
+ EXPRESSION (S_AXI_BREADY && axi_bvalid)
+             ------1-----    -----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       221
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       238
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       321
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       327
+ EXPRESSION (slv_reg_wren && write_reject && (PSTATE == 2'b0))
+             ------1-----    ------2-----    --------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+ LINE       327
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       331
+ EXPRESSION (PWRITE && PREADY && (PSTATE == 2'b10))
+             ---1--    ---2--    --------3--------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Covered
+ 1   1   1  Covered
+
+ LINE       331
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       335
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       338
+ EXPRESSION (S_AXI_BREADY && axi_bvalid)
+             ------1-----    -----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       355
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       381
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       387
+ EXPRESSION (slv_reg_rden && read_reject && (PSTATE == 2'b0))
+             ------1-----    -----2-----    --------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+ LINE       387
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       391
+ EXPRESSION (((!PWRITE)) && PREADY && (PSTATE == 2'b10))
+             -----1-----    ---2--    --------3--------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Covered
+ 1   1   1  Covered
+
+ LINE       391
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       395
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       397
+ EXPRESSION (axi_rvalid && S_AXI_RREADY)
+             -----1----    ------2-----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       442
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       447
+ EXPRESSION (slv_reg_rden && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       447
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       451
+ EXPRESSION (slv_reg_wren && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       451
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       463
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       468
+ EXPRESSION (slv_reg_rden && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       468
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       472
+ EXPRESSION (slv_reg_wren && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       472
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       484
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       516
+ EXPRESSION (PREADY == 1'b1)
+            --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       116
+ EXPRESSION (PSEL & (PADDR[14:12] == UART))
+             --1-   -----------2----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       116
+ SUB-EXPRESSION (PADDR[14:12] == UART)
+                -----------1----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       117
+ EXPRESSION (PSEL & (PADDR[14:12] == GPIO))
+             --1-   -----------2----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       117
+ SUB-EXPRESSION (PADDR[14:12] == GPIO)
+                -----------1----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       118
+ EXPRESSION (PSEL & (PADDR[14:12] == TIMER))
+             --1-   -----------2-----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       118
+ SUB-EXPRESSION (PADDR[14:12] == TIMER)
+                -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       162
+ EXPRESSION (PSTATE != 2'b0)
+            --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       165
+ EXPRESSION (((!axi_awready)) && S_AXI_AWVALID && S_AXI_WVALID && aw_en && ((!apb_busy)) && ((!S_AXI_ARVALID)) && ((!axi_arready)) && ((!axi_rvalid)))
+             --------1-------    ------2------    ------3-----    --4--    ------5------    ---------6--------    --------7-------    -------8-------
+
+-1- -2- -3- -4- -5- -6- -7- -8- Status
+ 0   1   1   1   1   1   1   1  Not Covered
+ 1   0   1   1   1   1   1   1  Covered
+ 1   1   0   1   1   1   1   1  Covered
+ 1   1   1   0   1   1   1   1  Covered
+ 1   1   1   1   0   1   1   1  Covered
+ 1   1   1   1   1   0   1   1  Covered
+ 1   1   1   1   1   1   0   1  Not Covered
+ 1   1   1   1   1   1   1   0  Covered
+ 1   1   1   1   1   1   1   1  Covered
+
+ LINE       168
+ EXPRESSION (((!axi_arready)) && S_AXI_ARVALID && ((!axi_rvalid)) && ((!apb_busy)) && aw_en && ((!axi_awready)) && ((!axi_wready)))
+             --------1-------    ------2------    -------3-------    ------4------    --5--    --------6-------    -------7-------
+
+-1- -2- -3- -4- -5- -6- -7- Status
+ 0   1   1   1   1   1   1  Covered
+ 1   0   1   1   1   1   1  Covered
+ 1   1   0   1   1   1   1  Covered
+ 1   1   1   0   1   1   1  Covered
+ 1   1   1   1   0   1   1  Covered
+ 1   1   1   1   1   0   1  Not Covered
+ 1   1   1   1   1   1   0  Not Covered
+ 1   1   1   1   1   1   1  Covered
+
+ LINE       171
+ EXPRESSION (S_AXI_AWADDR[0] || (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2]))))
+             -------1-------    --------------------------------2--------------------------------
+
+-1- -2- Status
+ 0   0  Covered
+ 0   1  Not Covered
+ 1   0  Covered
+
+ LINE       171
+ SUB-EXPRESSION (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2])))
+                 -------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       260
+ EXPRESSION (axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID)
+             -----1----    ------2-----    -----3-----    ------4------
+
+-1- -2- -3- -4- Status
+ 0   1   1   1  Not Covered
+ 1   0   1   1  Not Covered
+ 1   1   0   1  Not Covered
+ 1   1   1   0  Not Covered
+ 1   1   1   1  Covered
+
+ LINE       407
+ EXPRESSION (axi_arready & S_AXI_ARVALID & ((~axi_rvalid)))
+             -----1-----   ------2------   -------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Not Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : APB_v1_0_S00_AXI
+                Total Covered Percent 
+Totals          59    48      81.36   
+Total Bits      1010  476     47.13   
+Total Bits 0->1 505   240     47.52   
+Total Bits 1->0 505   236     46.73   
+
+                              
+Ports          33  29  87.88  
+Port Bits      456 328 71.93  
+Port Bits 0->1 228 165 72.37  
+Port Bits 1->0 228 163 71.49  
+
+                                
+Signals          26  19  73.08  
+Signal Bits      554 148 26.71  
+Signal Bits 0->1 277 75  27.08  
+Signal Bits 1->0 277 73  26.35  
+
+Port Details
+                    Toggle      Toggle 1->0 Toggle 0->1 Direction 
+S_AXI_ACLK          Yes         Yes         Yes         INPUT     
+S_AXI_ARESETN       No          No          Yes         INPUT     
+S_AXI_AWADDR[6:0]   Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[7]     No          No          No          INPUT     
+S_AXI_AWADDR[8]     Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[11:9]  No          No          No          INPUT     
+S_AXI_AWADDR[13:12] Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[29:14] No          No          No          INPUT     
+S_AXI_AWADDR[30]    Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[31]    No          No          No          INPUT     
+S_AXI_AWPROT[2:0]   Yes         Yes         Yes         INPUT     
+S_AXI_AWVALID       Yes         Yes         Yes         INPUT     
+S_AXI_AWREADY       Yes         Yes         Yes         OUTPUT    
+S_AXI_WDATA[31:0]   Yes         Yes         Yes         INPUT     
+S_AXI_WSTRB[3:0]    Yes         Yes         Yes         INPUT     
+S_AXI_WVALID        Yes         Yes         Yes         INPUT     
+S_AXI_WREADY        Yes         Yes         Yes         OUTPUT    
+S_AXI_BRESP[0]      Unreachable Unreachable Unreachable OUTPUT    
+S_AXI_BRESP[1]      Yes         Yes         Yes         OUTPUT    
+S_AXI_BVALID        Yes         Yes         Yes         OUTPUT    
+S_AXI_BREADY        Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[6:0]   Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[7]     No          No          No          INPUT     
+S_AXI_ARADDR[8]     Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[11:9]  No          No          No          INPUT     
+S_AXI_ARADDR[13:12] Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[29:14] No          No          No          INPUT     
+S_AXI_ARADDR[30]    Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[31]    No          No          No          INPUT     
+S_AXI_ARPROT[2:0]   Yes         Yes         Yes         INPUT     
+S_AXI_ARVALID       Yes         Yes         Yes         INPUT     
+S_AXI_ARREADY       Yes         Yes         Yes         OUTPUT    
+S_AXI_RDATA[31:0]   Yes         Yes         Yes         OUTPUT    
+S_AXI_RRESP[0]      Unreachable Unreachable Unreachable OUTPUT    
+S_AXI_RRESP[1]      Yes         Yes         Yes         OUTPUT    
+S_AXI_RVALID        Yes         Yes         Yes         OUTPUT    
+S_AXI_RREADY        Yes         Yes         Yes         INPUT     
+PADDR[6:0]          Yes         Yes         Yes         OUTPUT    
+PADDR[7]            No          No          No          OUTPUT    
+PADDR[8]            Yes         Yes         Yes         OUTPUT    
+PADDR[11:9]         No          No          No          OUTPUT    
+PADDR[13:12]        Yes         Yes         Yes         OUTPUT    
+PADDR[29:14]        No          No          No          OUTPUT    
+PADDR[30]           No          No          Yes         OUTPUT    
+PADDR[31]           No          No          No          OUTPUT    
+PSEL_UART           Yes         Yes         Yes         OUTPUT    
+PSEL_GPIO           Yes         Yes         Yes         OUTPUT    
+PSEL_TIMER          Yes         Yes         Yes         OUTPUT    
+PENABLE             Yes         Yes         Yes         OUTPUT    
+PWRITE              Yes         Yes         Yes         OUTPUT    
+PWDATA[15:0]        Yes         Yes         Yes         OUTPUT    
+PSTRB[1:0]          Yes         Yes         Yes         OUTPUT    
+PPROT[2:0]          Yes         Yes         Yes         OUTPUT    
+PRDATA[15:0]        Yes         Yes         Yes         INPUT     
+PREADY              Yes         Yes         Yes         INPUT     
+PSLVERR             Yes         Yes         Yes         INPUT     
+
+Signal Details
+                   Toggle      Toggle 1->0 Toggle 0->1 
+PSEL               Yes         Yes         Yes         
+axi_awaddr[6:0]    Yes         Yes         Yes         
+axi_awaddr[7]      No          No          No          
+axi_awaddr[8]      Yes         Yes         Yes         
+axi_awaddr[11:9]   No          No          No          
+axi_awaddr[13:12]  Yes         Yes         Yes         
+axi_awaddr[29:14]  No          No          No          
+axi_awaddr[30]     No          No          Yes         
+axi_awaddr[31]     No          No          No          
+axi_awready        Yes         Yes         Yes         
+axi_wready         Yes         Yes         Yes         
+axi_bresp[0]       Unreachable Unreachable Unreachable 
+axi_bresp[1]       Yes         Yes         Yes         
+axi_bvalid         Yes         Yes         Yes         
+axi_araddr[6:0]    Yes         Yes         Yes         
+axi_araddr[7]      No          No          No          
+axi_araddr[8]      Yes         Yes         Yes         
+axi_araddr[11:9]   No          No          No          
+axi_araddr[13:12]  Yes         Yes         Yes         
+axi_araddr[29:14]  No          No          No          
+axi_araddr[30]     No          No          Yes         
+axi_araddr[31]     No          No          No          
+axi_arready        Yes         Yes         Yes         
+axi_rdata[31:0]    Yes         Yes         Yes         
+axi_rresp[0]       Unreachable Unreachable Unreachable 
+axi_rresp[1]       Yes         Yes         Yes         
+axi_rvalid         Yes         Yes         Yes         
+slv_reg0[31:0]     No          No          No          
+slv_reg1[31:0]     No          No          No          
+slv_reg2[31:0]     No          No          No          
+slv_reg3[31:0]     No          No          No          
+slv_reg_rden       Yes         Yes         Yes         
+slv_reg_wren       Yes         Yes         Yes         
+reg_data_out[31:0] No          No          No          
+aw_en              Yes         Yes         Yes         
+PSTATE[1:0]        Yes         Yes         Yes         
+apb_prot[2:0]      Yes         Yes         Yes         
+apb_busy           Yes         Yes         Yes         
+write_grant        Yes         Yes         Yes         
+read_grant         Yes         Yes         Yes         
+write_reject       Yes         Yes         Yes         
+read_reject        Yes         Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+FSM Coverage for Module : APB_v1_0_S00_AXI
+Summary for FSM :: PSTATE
+            Total Covered Percent                         
+States      3     3       100.00  (Not included in score) 
+Transitions 4     3       75.00                           
+Sequences   0     0                                       
+
+State, Transition and Sequence Details for FSM :: PSTATE
+-------------------------------------------------------------------------------
+states Line No. Covered 
+'h0    485      Covered 
+'h1    498      Covered 
+'h2    513      Covered 
+
+transitions Line No. Covered     
+'h0->'h1    498      Covered     
+'h1->'h0    485      Not Covered 
+'h1->'h2    513      Covered     
+'h2->'h0    485      Covered     
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : APB_v1_0_S00_AXI
+         Line No. Total Covered Percent 
+Branches          46    45      97.83   
+IF       193      4     4       100.00  
+IF       221      3     3       100.00  
+IF       238      3     3       100.00  
+IF       321      6     6       100.00  
+IF       355      3     3       100.00  
+IF       381      6     6       100.00  
+IF       442      4     4       100.00  
+IF       463      5     5       100.00  
+IF       484      12    11      91.67   
+
+
+193        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+194        	      axi_awready <= 1'b0;
+           	      ==>
+195        	      aw_en <= 1'b1;
+196        	  end 
+197        	  else begin    
+198        	      if (write_grant) begin
+           	      -2-  
+199        	          // slave is ready to accept write address when 
+200        	          // there is a valid write address and write data
+201        	          // on the write address and data bus. This design 
+202        	          // expects no outstanding transactions. 
+203        	          axi_awready <= 1'b1;
+           	          ==>
+204        	          aw_en <= 1'b0;
+205        	        end
+206        	        else if (S_AXI_BREADY && axi_bvalid) begin
+           	             -3-  
+207        	              aw_en <= 1'b1;
+           	              ==>
+208        	              axi_awready <= 1'b0;
+209        	            end
+210        	      else  begin
+211        	          axi_awready <= 1'b0;
+           	          ==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   1   Covered 
+0   0   0   Covered 
+
+
+221        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+222        	      axi_awaddr <= 0;
+           	      ==>
+223        	    end 
+224        	  else begin    
+225        	      if (write_grant) begin
+           	      -2-  
+226        	          // Write Address latching 
+227        	          axi_awaddr <= S_AXI_AWADDR;
+           	          ==>
+228        	        end
+           	        MISSING_ELSE
+           	        ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+238        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+239        	      axi_wready <= 1'b0;
+           	      ==>
+240        	    end 
+241        	  else begin    
+242        	      if (write_grant) begin
+           	      -2-  
+243        	          // slave is ready to accept write data when 
+244        	          // there is a valid write address and write data
+245        	          // on the write address and data bus. This design 
+246        	          // expects no outstanding transactions. 
+247        	          axi_wready <= 1'b1;
+           	          ==>
+248        	      end
+249        	      else begin axi_wready <= 1'b0; end
+           	      ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+321        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+322        	      axi_bvalid  <= 0;
+           	      ==>
+323        	      axi_bresp   <= 2'b0;
+324        	    end 
+325        	  else begin    
+326        	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+           	      -2-  
+328                      axi_bvalid <= 1'b1;
+                         ==>
+329                      axi_bresp <= 2'b10;
+330                  end
+331                  else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          -3-  
+332        	          // indicates a valid write response is available
+333        	          axi_bvalid <= 1'b1;
+334        	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+           	                                -4-  
+           	                                ==>  
+           	                                ==>  
+336        	        end                   // work error responses in future
+337        	      else begin
+338        	          if (S_AXI_BREADY && axi_bvalid) begin
+           	          -5-  
+339        	            //check if bready is asserted while bvalid is high) 
+340        	            //(there is a possibility that bready is always asserted high)   
+341        	              axi_bvalid <= 1'b0; 
+           	              ==>
+342        	          end  
+           	          MISSING_ELSE
+           	          ==>
+
+Branches:
+
+-1- -2- -3- -4- -5- Status  
+1   -   -   -   -   Covered 
+0   1   -   -   -   Covered 
+0   0   1   1   -   Covered 
+0   0   1   0   -   Covered 
+0   0   0   -   1   Covered 
+0   0   0   -   0   Covered 
+
+
+355        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+356        	      axi_arready <= 1'b0;
+           	      ==>
+357        	      axi_araddr  <= 32'b0;
+358        	  end 
+359        	  else begin    
+360        	      if (read_grant) begin
+           	      -2-  
+361        	          // indicates that the slave has acceped the valid read address
+362        	          axi_arready <= 1'b1;
+           	          ==>
+363        	          // Read address latching
+364        	          axi_araddr  <= S_AXI_ARADDR;
+365        	        end
+366        	      else begin
+367        	          axi_arready <= 1'b0;
+           	          ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+381        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+382        	      axi_rvalid <= 0;
+           	      ==>
+383        	      axi_rresp  <= 0;
+384        	  end 
+385        	  else begin    
+386        	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+           	      -2-  
+388                      axi_rvalid <= 1'b1;
+                         ==>
+389                      axi_rresp <= 2'b10;
+390                  end
+391                  else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          -3-  
+392        	          // Valid read data is available at the read data bus
+393        	          axi_rvalid <= 1'b1;
+394        	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+           	                                -4-  
+           	                                ==>  
+           	                                ==>  
+396        	      end   
+397        	      else if (axi_rvalid && S_AXI_RREADY) begin
+           	           -5-  
+398        	          // Read data is accepted by the master
+399        	          axi_rvalid <= 1'b0;
+           	          ==>
+400        	      end                
+           	      MISSING_ELSE
+           	      ==>
+
+Branches:
+
+-1- -2- -3- -4- -5- Status  
+1   -   -   -   -   Covered 
+0   1   -   -   -   Covered 
+0   0   1   1   -   Covered 
+0   0   1   0   -   Covered 
+0   0   0   -   1   Covered 
+0   0   0   -   0   Covered 
+
+
+442                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+443                    PADDR <= 0;
+                       ==>
+444                    apb_prot <= 0;
+445                end
+446        	    else begin    
+447        	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+           	        -2-  
+448                        PADDR <= S_AXI_ARADDR;
+                           ==>
+449                        apb_prot <= S_AXI_ARPROT;
+450                    end
+451                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            -3-  
+452                        PADDR <= S_AXI_AWADDR;
+                           ==>
+453                        apb_prot <= S_AXI_AWPROT;
+454                    end
+                       MISSING_ELSE
+                       ==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   1   Covered 
+0   0   0   Covered 
+
+
+463                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+464                    PWDATA <= 0;
+                       ==>
+465                    PSTRB <= 0;
+466                end
+467                else begin
+468                    if (slv_reg_rden && (PSTATE == 2'b00)) begin
+                       -2-  
+469                        PWDATA <= 0;
+                           ==>
+470                        PSTRB <= 0;
+471                    end
+472                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            -3-  
+473                        if (S_AXI_AWADDR[1]) begin
+                           -4-  
+474                            PWDATA <= S_AXI_WDATA[31:16];
+                               ==>
+475                            PSTRB  <= S_AXI_WSTRB[3:2];
+476                        end else begin
+477                            PWDATA <= S_AXI_WDATA[15:0];
+                               ==>
+478                            PSTRB  <= S_AXI_WSTRB[1:0];
+479                        end
+480                    end
+                       MISSING_ELSE
+                       ==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   -   -   Covered 
+0   0   1   1   Covered 
+0   0   1   0   Covered 
+0   0   0   -   Covered 
+
+
+484                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+485                    PSTATE <= 0;
+                       ==>
+486                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+487                    axi_rdata <= 0;
+488                end
+489                else begin
+490                    case (PSTATE)
+                       -2-  
+491                        2'b00 : begin
+492                            if (slv_reg_rden) begin
+                               -3-  
+493                                if (read_reject) begin
+                                   -4-  
+494                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+                                       ==>
+495                                    axi_rdata <= 0;
+496                                end else begin
+497                                    {PSEL,PENABLE,PWRITE} <= 3'b100;
+                                       ==>
+498                                    PSTATE <= 2'b01;
+499                                end
+500                            end
+501                            else if (slv_reg_wren) begin
+                                    -5-  
+502                                if (write_reject) begin
+                                   -6-  
+503                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+                                       ==>
+504                                end else begin
+505                                    {PSEL,PENABLE,PWRITE} <= 3'b101;
+                                       ==>
+506                                    PSTATE <= 2'b01;
+507                                end
+508                            end
+509                            else {PSEL,PENABLE,PWRITE} <= {3'b000};
+                               ==>
+510                        end
+511                        2'b01 : begin
+512                                {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+                                   ==>
+513                                PSTATE <= 2'b10;
+514                        end
+515                        2'b10 : begin
+516                            if(PREADY == 1'b1)begin
+                               -7-  
+517                                {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518                                PSTATE <= 2'b00;
+519                                // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                // PADDR is already latched with the read address at this point, so it can be used as is.
+522                                if(!PWRITE) begin
+                                   -8-  
+523                                    if (PADDR[1])
+                                       -9-  
+524                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+                                           ==>
+525                                    else
+526                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+                                           ==>
+527                                end
+                                   MISSING_ELSE
+                                   ==>
+528                            end
+                               MISSING_ELSE
+                               ==>
+529                        end
+530                        default : begin
+531                                {PSEL,PENABLE,PWRITE} <= {3'b000};
+                                   ==>
+
+Branches:
+
+-1- -2-     -3- -4- -5- -6- -7- -8- -9- Status      
+1   -       -   -   -   -   -   -   -   Covered     
+0   2'b00   1   1   -   -   -   -   -   Covered     
+0   2'b00   1   0   -   -   -   -   -   Covered     
+0   2'b00   0   -   1   1   -   -   -   Covered     
+0   2'b00   0   -   1   0   -   -   -   Covered     
+0   2'b00   0   -   0   -   -   -   -   Covered     
+0   2'b01   -   -   -   -   -   -   -   Covered     
+0   2'b10   -   -   -   -   1   1   1   Covered     
+0   2'b10   -   -   -   -   1   1   0   Covered     
+0   2'b10   -   -   -   -   1   0   -   Covered     
+0   2'b10   -   -   -   -   0   -   -   Covered     
+0   default -   -   -   -   -   -   -   Not Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 85.23  97.94  86.40  68.99  75.00  97.83 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 85.23  97.94  86.40  68.99  75.00  97.83 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME             
+ 80.86  97.94  86.40  47.13  75.00  97.83 APB_v1_0_S00_AXI 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 92.43 100.00 --      77.30 --     100.00 dut  
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+
+             Line No.   Total   Covered  Percent
+TOTAL                       97       95    97.94
+ALWAYS            193       10       10   100.00
+ALWAYS            221        4        4   100.00
+ALWAYS            238        5        5   100.00
+ALWAYS            321       11       11   100.00
+ALWAYS            355        7        7   100.00
+ALWAYS            381       11       11   100.00
+ALWAYS            442        9        9   100.00
+ALWAYS            463       12       12   100.00
+ALWAYS            484       28       26    92.86
+
+192                     	begin
+193        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+194        1/1          	      axi_awready <= 1'b0;
+195        1/1          	      aw_en <= 1'b1;
+196                     	  end 
+197                     	  else begin    
+198        1/1          	      if (write_grant) begin
+199                     	          // slave is ready to accept write address when 
+200                     	          // there is a valid write address and write data
+201                     	          // on the write address and data bus. This design 
+202                     	          // expects no outstanding transactions. 
+203        1/1          	          axi_awready <= 1'b1;
+204        1/1          	          aw_en <= 1'b0;
+205                     	        end
+206        1/1          	        else if (S_AXI_BREADY && axi_bvalid) begin
+207        1/1          	              aw_en <= 1'b1;
+208        1/1          	              axi_awready <= 1'b0;
+209                     	            end
+210                     	      else  begin
+211        1/1          	          axi_awready <= 1'b0;
+212                     	      end
+213                     	    end 
+214                     	end       
+215                     
+216                     	// Implement axi_awaddr latching
+217                     	// This process is used to latch the address when both 
+218                     	// S_AXI_AWVALID and S_AXI_WVALID are valid. 
+219                     
+220                     	always @( posedge S_AXI_ACLK ) begin
+221        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+222        1/1          	      axi_awaddr <= 0;
+223                     	    end 
+224                     	  else begin    
+225        1/1          	      if (write_grant) begin
+226                     	          // Write Address latching 
+227        1/1          	          axi_awaddr <= S_AXI_AWADDR;
+228                     	        end
+                        MISSING_ELSE
+229                     	    end 
+230                     	end       
+231                     
+232                     	// Implement axi_wready generation
+233                     	// axi_wready is asserted for one S_AXI_ACLK clock cycle when both
+234                     	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_wready is 
+235                     	// de-asserted when reset is low. 
+236                     
+237                     	always @( posedge S_AXI_ACLK ) begin
+238        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+239        1/1          	      axi_wready <= 1'b0;
+240                     	    end 
+241                     	  else begin    
+242        1/1          	      if (write_grant) begin
+243                     	          // slave is ready to accept write data when 
+244                     	          // there is a valid write address and write data
+245                     	          // on the write address and data bus. This design 
+246                     	          // expects no outstanding transactions. 
+247        1/1          	          axi_wready <= 1'b1;
+248                     	      end
+249        1/1          	      else begin axi_wready <= 1'b0; end
+250                     	    end 
+251                     	end       
+252                     
+253                     	// Implement memory mapped register select and write logic generation
+254                     	// The write data is accepted and written to memory mapped registers when
+255                     	// axi_awready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted. Write strobes are used to
+256                     	// select byte enables of slave registers while writing.
+257                     	// These registers are cleared when reset (active low) is applied.
+258                     	// Slave register write enable is asserted when valid address and data are available
+259                     	// and the slave is ready to accept the write address and write data.
+260                     	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
+261                     
+262                     	//always @( posedge S_AXI_ACLK )
+263                     	//begin
+264                     	//  if ( S_AXI_ARESETN == 1'b0 )
+265                     	//    begin
+266                     	//      slv_reg0 <= 0;
+267                     	//      slv_reg1 <= 0;
+268                     	//      slv_reg2 <= 0;
+269                     	//      slv_reg3 <= 0;
+270                     	//    end 
+271                     	//  else begin
+272                     	//    if (slv_reg_wren)
+273                     	//      begin
+274                     	//        case ( axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+275                     	//          2'h0:
+276                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+277                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+278                     	//                // Respective byte enables are asserted as per write strobes 
+279                     	//                // Slave register 0
+280                     	//                slv_reg0[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+281                     	//              end  
+282                     	//          2'h1:
+283                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+284                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+285                     	//                // Respective byte enables are asserted as per write strobes 
+286                     	//                // Slave register 1
+287                     	//                slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+288                     	//              end  
+289                     	//          2'h2:
+290                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+291                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+292                     	//                // Respective byte enables are asserted as per write strobes 
+293                     	//                // Slave register 2
+294                     	//                slv_reg2[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+295                     	//              end  
+296                     	//          2'h3:
+297                     	//            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+298                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+299                     	//                // Respective byte enables are asserted as per write strobes 
+300                     	//                // Slave register 3
+301                     	//                slv_reg3[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+302                     	//              end  
+303                     	//          default : begin
+304                     	//                      slv_reg0 <= slv_reg0;
+305                     	//                      slv_reg1 <= slv_reg1;
+306                     	//                      slv_reg2 <= slv_reg2;
+307                     	//                      slv_reg3 <= slv_reg3;
+308                     	//                    end
+309                     	//        endcase
+310                     	//      end
+311                     	//  end
+312                     	//end    
+313                     
+314                     	// Implement write response logic generation
+315                     	// The write response and response valid signals are asserted by the slave 
+316                     	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
+317                     	// This marks the acceptance of address and indicates the status of 
+318                     	// write transaction.
+319                     
+320                     	always @( posedge S_AXI_ACLK ) begin
+321        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+322        1/1          	      axi_bvalid  <= 0;
+323        1/1          	      axi_bresp   <= 2'b0;
+324                     	    end 
+325                     	  else begin    
+326                     	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        1/1          	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+328        1/1                        axi_bvalid <= 1'b1;
+329        1/1                        axi_bresp <= 2'b10;
+330                               end
+331        1/1                    else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+332                     	          // indicates a valid write response is available
+333        1/1          	          axi_bvalid <= 1'b1;
+334                     	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        1/1          	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+336                     	        end                   // work error responses in future
+337                     	      else begin
+338        1/1          	          if (S_AXI_BREADY && axi_bvalid) begin
+339                     	            //check if bready is asserted while bvalid is high) 
+340                     	            //(there is a possibility that bready is always asserted high)   
+341        1/1          	              axi_bvalid <= 1'b0; 
+342                     	          end  
+                        MISSING_ELSE
+343                     	        end
+344                     	    end
+345                     	end   
+346                     
+347                     	// Implement axi_arready generation
+348                     	// axi_arready is asserted for one S_AXI_ACLK clock cycle when
+349                     	// S_AXI_ARVALID is asserted. axi_awready is 
+350                     	// de-asserted when reset (active low) is asserted. 
+351                     	// The read address is also latched when S_AXI_ARVALID is 
+352                     	// asserted. axi_araddr is reset to zero on reset assertion.
+353                     
+354                     	always @( posedge S_AXI_ACLK ) begin
+355        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+356        1/1          	      axi_arready <= 1'b0;
+357        1/1          	      axi_araddr  <= 32'b0;
+358                     	  end 
+359                     	  else begin    
+360        1/1          	      if (read_grant) begin
+361                     	          // indicates that the slave has acceped the valid read address
+362        1/1          	          axi_arready <= 1'b1;
+363                     	          // Read address latching
+364        1/1          	          axi_araddr  <= S_AXI_ARADDR;
+365                     	        end
+366                     	      else begin
+367        1/1          	          axi_arready <= 1'b0;
+368                     	      end
+369                     	    end 
+370                     	end       
+371                     
+372                     	// Implement axi_arvalid generation
+373                     	// axi_rvalid is asserted for one S_AXI_ACLK clock cycle when both 
+374                     	// S_AXI_ARVALID and axi_arready are asserted. The slave registers 
+375                     	// data are available on the axi_rdata bus at this instance. The 
+376                     	// assertion of axi_rvalid marks the validity of read data on the 
+377                     	// bus and axi_rresp indicates the status of read transaction.axi_rvalid 
+378                     	// is deasserted on reset (active low). axi_rresp and axi_rdata are 
+379                     	// cleared to zero on reset (active low).  
+380                     	always @( posedge S_AXI_ACLK ) begin
+381        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+382        1/1          	      axi_rvalid <= 0;
+383        1/1          	      axi_rresp  <= 0;
+384                     	  end 
+385                     	  else begin    
+386                     	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        1/1          	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+388        1/1                        axi_rvalid <= 1'b1;
+389        1/1                        axi_rresp <= 2'b10;
+390                               end
+391        1/1                    else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+392                     	          // Valid read data is available at the read data bus
+393        1/1          	          axi_rvalid <= 1'b1;
+394                     	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        1/1          	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+396                     	      end   
+397        1/1          	      else if (axi_rvalid && S_AXI_RREADY) begin
+398                     	          // Read data is accepted by the master
+399        1/1          	          axi_rvalid <= 1'b0;
+400                     	      end                
+                        MISSING_ELSE
+401                     	    end
+402                     	end    
+403                     
+404                     	// Implement memory mapped register select and read logic generation
+405                     	// Slave register read enable is asserted when valid address is available
+406                     	// and the slave is ready to accept the read address.
+407                     	assign slv_reg_rden = axi_arready & S_AXI_ARVALID & ~axi_rvalid;
+408                     	//always @(*)
+409                     	//begin
+410                     	//      // Address decoding for reading registers
+411                     	//      case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+412                     	//        2'h0   : reg_data_out <= slv_reg0;
+413                     	//        2'h1   : reg_data_out <= slv_reg1;
+414                     	//        2'h2   : reg_data_out <= slv_reg2;
+415                     	//        2'h3   : reg_data_out <= slv_reg3;
+416                     	//        default : reg_data_out <= 0;
+417                     	//      endcase
+418                     	//end
+419                     
+420                     	// Output register or memory read data
+421                     	//always @( posedge S_AXI_ACLK )
+422                     	//begin
+423                     	//  if ( S_AXI_ARESETN == 1'b0 )
+424                     	//    begin
+425                     	//      axi_rdata  <= 0;
+426                     	//    end 
+427                     	//  else
+428                     	//    begin    
+429                     	//      // When there is a valid read address (S_AXI_ARVALID) with 
+430                     	//      // acceptance of read address by the slave (axi_arready), 
+431                     	//      // output the read dada 
+432                     	//      if (slv_reg_rden)
+433                     	//        begin
+434                     	//          axi_rdata <= reg_data_out;     // register read data
+435                     	//        end   
+436                     	//    end
+437                     	//end    
+438                     
+439                     	// Add user logic here
+440                     
+441                     	always @( posedge S_AXI_ACLK ) begin
+442        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+443        1/1                      PADDR <= 0;
+444        1/1                      apb_prot <= 0;
+445                             end
+446                     	    else begin    
+447        1/1          	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+448        1/1                          PADDR <= S_AXI_ARADDR;
+449        1/1                          apb_prot <= S_AXI_ARPROT;
+450                                 end
+451        1/1                      else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+452        1/1                          PADDR <= S_AXI_AWADDR;
+453        1/1                          apb_prot <= S_AXI_AWPROT;
+454                                 end
+                        MISSING_ELSE
+455                     	    end    
+456                     	end    
+457                     	
+458                         // ==== FIX (1/2): on write, select the upper/lower 16-bit byte lane using address[1] ====
+459                         // Previously it always looked only at S_AXI_WDATA[15:0]/WSTRB[1:0], but for
+460                         // non-word-aligned registers such as offset 2/6, the AXI spec puts the actual data on [31:16]/WSTRB[3:2],
+461                         // so the correct lane must be selected based on S_AXI_AWADDR[1].
+462                         always @( posedge S_AXI_ACLK ) begin
+463        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+464        1/1                      PWDATA <= 0;
+465        1/1                      PSTRB <= 0;
+466                             end
+467                             else begin
+468        1/1                      if (slv_reg_rden && (PSTATE == 2'b00)) begin
+469        1/1                          PWDATA <= 0;
+470        1/1                          PSTRB <= 0;
+471                                 end
+472        1/1                      else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+473        1/1                          if (S_AXI_AWADDR[1]) begin
+474        1/1                              PWDATA <= S_AXI_WDATA[31:16];
+475        1/1                              PSTRB  <= S_AXI_WSTRB[3:2];
+476                                     end else begin
+477        1/1                              PWDATA <= S_AXI_WDATA[15:0];
+478        1/1                              PSTRB  <= S_AXI_WSTRB[1:0];
+479                                     end
+480                                 end
+                        MISSING_ELSE
+481                             end
+482                         end
+483                         always @( posedge S_AXI_ACLK ) begin
+484        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+485        1/1                      PSTATE <= 0;
+486        1/1                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+487        1/1                      axi_rdata <= 0;
+488                             end
+489                             else begin
+490        1/1                      case (PSTATE)
+491                                     2'b00 : begin
+492        1/1                              if (slv_reg_rden) begin
+493        1/1                                  if (read_reject) begin
+494        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+495        1/1                                      axi_rdata <= 0;
+496                                             end else begin
+497        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b100;
+498        1/1                                      PSTATE <= 2'b01;
+499                                             end
+500                                         end
+501        1/1                              else if (slv_reg_wren) begin
+502        1/1                                  if (write_reject) begin
+503        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b000;
+504                                             end else begin
+505        1/1                                      {PSEL,PENABLE,PWRITE} <= 3'b101;
+506        1/1                                      PSTATE <= 2'b01;
+507                                             end
+508                                         end
+509        1/1                              else {PSEL,PENABLE,PWRITE} <= {3'b000};
+510                                     end
+511                                     2'b01 : begin
+512        1/1                                  {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+513        1/1                                  PSTATE <= 2'b10;
+514                                     end
+515                                     2'b10 : begin
+516        1/1                              if(PREADY == 1'b1)begin
+517        1/1                                  {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518        1/1                                  PSTATE <= 2'b00;
+519                                             // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                             // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                             // PADDR is already latched with the read address at this point, so it can be used as is.
+522        1/1                                  if(!PWRITE) begin
+523        1/1                                      if (PADDR[1])
+524        1/1                                          axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+525                                                 else
+526        1/1                                          axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+527                                             end
+                        MISSING_ELSE
+528                                         end
+                        MISSING_ELSE
+529                                     end
+530                                     default : begin
+531        0/1     ==>                          {PSEL,PENABLE,PWRITE} <= {3'b000};
+532        0/1     ==>                          PSTATE <= 2'b00;
+
+-------------------------------------------------------------------------------
+Cond Coverage for Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+
+               Total   Covered  Percent
+Conditions        125      108    86.40
+Logical           125      108    86.40
+Non-Logical         0        0
+Event               0        0
+
+ LINE       193
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       206
+ EXPRESSION (S_AXI_BREADY && axi_bvalid)
+             ------1-----    -----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       221
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       238
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       321
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       327
+ EXPRESSION (slv_reg_wren && write_reject && (PSTATE == 2'b0))
+             ------1-----    ------2-----    --------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+ LINE       327
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       331
+ EXPRESSION (PWRITE && PREADY && (PSTATE == 2'b10))
+             ---1--    ---2--    --------3--------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Covered
+ 1   1   1  Covered
+
+ LINE       331
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       335
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       338
+ EXPRESSION (S_AXI_BREADY && axi_bvalid)
+             ------1-----    -----2----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       355
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       381
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       387
+ EXPRESSION (slv_reg_rden && read_reject && (PSTATE == 2'b0))
+             ------1-----    -----2-----    --------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+ LINE       387
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       391
+ EXPRESSION (((!PWRITE)) && PREADY && (PSTATE == 2'b10))
+             -----1-----    ---2--    --------3--------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Covered
+ 1   1   0  Covered
+ 1   1   1  Covered
+
+ LINE       391
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       395
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       397
+ EXPRESSION (axi_rvalid && S_AXI_RREADY)
+             -----1----    ------2-----
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       442
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       447
+ EXPRESSION (slv_reg_rden && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       447
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       451
+ EXPRESSION (slv_reg_wren && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       451
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       463
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       468
+ EXPRESSION (slv_reg_rden && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       468
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       472
+ EXPRESSION (slv_reg_wren && (PSTATE == 2'b0))
+             ------1-----    --------2-------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Not Covered
+ 1   1  Covered
+
+ LINE       472
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       484
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       516
+ EXPRESSION (PREADY == 1'b1)
+            --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       116
+ EXPRESSION (PSEL & (PADDR[14:12] == UART))
+             --1-   -----------2----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       116
+ SUB-EXPRESSION (PADDR[14:12] == UART)
+                -----------1----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       117
+ EXPRESSION (PSEL & (PADDR[14:12] == GPIO))
+             --1-   -----------2----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       117
+ SUB-EXPRESSION (PADDR[14:12] == GPIO)
+                -----------1----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       118
+ EXPRESSION (PSEL & (PADDR[14:12] == TIMER))
+             --1-   -----------2-----------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       118
+ SUB-EXPRESSION (PADDR[14:12] == TIMER)
+                -----------1-----------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       162
+ EXPRESSION (PSTATE != 2'b0)
+            --------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       165
+ EXPRESSION (((!axi_awready)) && S_AXI_AWVALID && S_AXI_WVALID && aw_en && ((!apb_busy)) && ((!S_AXI_ARVALID)) && ((!axi_arready)) && ((!axi_rvalid)))
+             --------1-------    ------2------    ------3-----    --4--    ------5------    ---------6--------    --------7-------    -------8-------
+
+-1- -2- -3- -4- -5- -6- -7- -8- Status
+ 0   1   1   1   1   1   1   1  Not Covered
+ 1   0   1   1   1   1   1   1  Covered
+ 1   1   0   1   1   1   1   1  Covered
+ 1   1   1   0   1   1   1   1  Covered
+ 1   1   1   1   0   1   1   1  Covered
+ 1   1   1   1   1   0   1   1  Covered
+ 1   1   1   1   1   1   0   1  Not Covered
+ 1   1   1   1   1   1   1   0  Covered
+ 1   1   1   1   1   1   1   1  Covered
+
+ LINE       168
+ EXPRESSION (((!axi_arready)) && S_AXI_ARVALID && ((!axi_rvalid)) && ((!apb_busy)) && aw_en && ((!axi_awready)) && ((!axi_wready)))
+             --------1-------    ------2------    -------3-------    ------4------    --5--    --------6-------    -------7-------
+
+-1- -2- -3- -4- -5- -6- -7- Status
+ 0   1   1   1   1   1   1  Covered
+ 1   0   1   1   1   1   1  Covered
+ 1   1   0   1   1   1   1  Covered
+ 1   1   1   0   1   1   1  Covered
+ 1   1   1   1   0   1   1  Covered
+ 1   1   1   1   1   0   1  Not Covered
+ 1   1   1   1   1   1   0  Not Covered
+ 1   1   1   1   1   1   1  Covered
+
+ LINE       171
+ EXPRESSION (S_AXI_AWADDR[0] || (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2]))))
+             -------1-------    --------------------------------2--------------------------------
+
+-1- -2- Status
+ 0   0  Covered
+ 0   1  Not Covered
+ 1   0  Covered
+
+ LINE       171
+ SUB-EXPRESSION (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2])))
+                 -------1-------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       260
+ EXPRESSION (axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID)
+             -----1----    ------2-----    -----3-----    ------4------
+
+-1- -2- -3- -4- Status
+ 0   1   1   1  Not Covered
+ 1   0   1   1  Not Covered
+ 1   1   0   1  Not Covered
+ 1   1   1   0  Not Covered
+ 1   1   1   1  Covered
+
+ LINE       407
+ EXPRESSION (axi_arready & S_AXI_ARVALID & ((~axi_rvalid)))
+             -----1-----   ------2------   -------3-------
+
+-1- -2- -3- Status
+ 0   1   1  Covered
+ 1   0   1  Not Covered
+ 1   1   0  Not Covered
+ 1   1   1  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+                Total Covered Percent 
+Totals          54    48      88.89   
+Total Bits      690   476     68.99   
+Total Bits 0->1 345   240     69.57   
+Total Bits 1->0 345   236     68.41   
+
+                              
+Ports          33  29  87.88  
+Port Bits      456 328 71.93  
+Port Bits 0->1 228 165 72.37  
+Port Bits 1->0 228 163 71.49  
+
+                                
+Signals          21  19  90.48  
+Signal Bits      234 148 63.25  
+Signal Bits 0->1 117 75  64.10  
+Signal Bits 1->0 117 73  62.39  
+
+Port Details
+                    Toggle      Toggle 1->0 Toggle 0->1 Direction 
+S_AXI_ACLK          Yes         Yes         Yes         INPUT     
+S_AXI_ARESETN       No          No          Yes         INPUT     
+S_AXI_AWADDR[6:0]   Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[7]     No          No          No          INPUT     
+S_AXI_AWADDR[8]     Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[11:9]  No          No          No          INPUT     
+S_AXI_AWADDR[13:12] Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[29:14] No          No          No          INPUT     
+S_AXI_AWADDR[30]    Yes         Yes         Yes         INPUT     
+S_AXI_AWADDR[31]    No          No          No          INPUT     
+S_AXI_AWPROT[2:0]   Yes         Yes         Yes         INPUT     
+S_AXI_AWVALID       Yes         Yes         Yes         INPUT     
+S_AXI_AWREADY       Yes         Yes         Yes         OUTPUT    
+S_AXI_WDATA[31:0]   Yes         Yes         Yes         INPUT     
+S_AXI_WSTRB[3:0]    Yes         Yes         Yes         INPUT     
+S_AXI_WVALID        Yes         Yes         Yes         INPUT     
+S_AXI_WREADY        Yes         Yes         Yes         OUTPUT    
+S_AXI_BRESP[0]      Unreachable Unreachable Unreachable OUTPUT    
+S_AXI_BRESP[1]      Yes         Yes         Yes         OUTPUT    
+S_AXI_BVALID        Yes         Yes         Yes         OUTPUT    
+S_AXI_BREADY        Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[6:0]   Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[7]     No          No          No          INPUT     
+S_AXI_ARADDR[8]     Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[11:9]  No          No          No          INPUT     
+S_AXI_ARADDR[13:12] Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[29:14] No          No          No          INPUT     
+S_AXI_ARADDR[30]    Yes         Yes         Yes         INPUT     
+S_AXI_ARADDR[31]    No          No          No          INPUT     
+S_AXI_ARPROT[2:0]   Yes         Yes         Yes         INPUT     
+S_AXI_ARVALID       Yes         Yes         Yes         INPUT     
+S_AXI_ARREADY       Yes         Yes         Yes         OUTPUT    
+S_AXI_RDATA[31:0]   Yes         Yes         Yes         OUTPUT    
+S_AXI_RRESP[0]      Unreachable Unreachable Unreachable OUTPUT    
+S_AXI_RRESP[1]      Yes         Yes         Yes         OUTPUT    
+S_AXI_RVALID        Yes         Yes         Yes         OUTPUT    
+S_AXI_RREADY        Yes         Yes         Yes         INPUT     
+PADDR[6:0]          Yes         Yes         Yes         OUTPUT    
+PADDR[7]            No          No          No          OUTPUT    
+PADDR[8]            Yes         Yes         Yes         OUTPUT    
+PADDR[11:9]         No          No          No          OUTPUT    
+PADDR[13:12]        Yes         Yes         Yes         OUTPUT    
+PADDR[29:14]        No          No          No          OUTPUT    
+PADDR[30]           No          No          Yes         OUTPUT    
+PADDR[31]           No          No          No          OUTPUT    
+PSEL_UART           Yes         Yes         Yes         OUTPUT    
+PSEL_GPIO           Yes         Yes         Yes         OUTPUT    
+PSEL_TIMER          Yes         Yes         Yes         OUTPUT    
+PENABLE             Yes         Yes         Yes         OUTPUT    
+PWRITE              Yes         Yes         Yes         OUTPUT    
+PWDATA[15:0]        Yes         Yes         Yes         OUTPUT    
+PSTRB[1:0]          Yes         Yes         Yes         OUTPUT    
+PPROT[2:0]          Yes         Yes         Yes         OUTPUT    
+PRDATA[15:0]        Yes         Yes         Yes         INPUT     
+PREADY              Yes         Yes         Yes         INPUT     
+PSLVERR             Yes         Yes         Yes         INPUT     
+
+Signal Details
+                   Toggle      Toggle 1->0 Toggle 0->1 Exclude Annotation                                                                                  
+PSEL               Yes         Yes         Yes         
+axi_awaddr[6:0]    Yes         Yes         Yes         
+axi_awaddr[7]      No          No          No          
+axi_awaddr[8]      Yes         Yes         Yes         
+axi_awaddr[11:9]   No          No          No          
+axi_awaddr[13:12]  Yes         Yes         Yes         
+axi_awaddr[29:14]  No          No          No          
+axi_awaddr[30]     No          No          Yes         
+axi_awaddr[31]     No          No          No          
+axi_awready        Yes         Yes         Yes         
+axi_wready         Yes         Yes         Yes         
+axi_bresp[0]       Unreachable Unreachable Unreachable Response encoding: only OKAY (2'b00) and SLVERR (2'b10) are produced, bit 0 is constant 0 by design 
+axi_bresp[1]       Yes         Yes         Yes         
+axi_bvalid         Yes         Yes         Yes         
+axi_araddr[6:0]    Yes         Yes         Yes         
+axi_araddr[7]      No          No          No          
+axi_araddr[8]      Yes         Yes         Yes         
+axi_araddr[11:9]   No          No          No          
+axi_araddr[13:12]  Yes         Yes         Yes         
+axi_araddr[29:14]  No          No          No          
+axi_araddr[30]     No          No          Yes         
+axi_araddr[31]     No          No          No          
+axi_arready        Yes         Yes         Yes         
+axi_rdata[31:0]    Yes         Yes         Yes         
+axi_rresp[0]       Unreachable Unreachable Unreachable 
+axi_rresp[1]       Yes         Yes         Yes         
+axi_rvalid         Yes         Yes         Yes         
+slv_reg0[31:0]     Excluded    Excluded    Excluded    Dead Xilinx template register file: declared, every driver is commented out                         
+slv_reg1[31:0]     Excluded    Excluded    Excluded    
+slv_reg2[31:0]     Excluded    Excluded    Excluded    
+slv_reg3[31:0]     Excluded    Excluded    Excluded    
+slv_reg_rden       Yes         Yes         Yes         
+slv_reg_wren       Yes         Yes         Yes         
+reg_data_out[31:0] Excluded    Excluded    Excluded    
+aw_en              Yes         Yes         Yes         
+PSTATE[1:0]        Yes         Yes         Yes         
+apb_prot[2:0]      Yes         Yes         Yes         
+apb_busy           Yes         Yes         Yes         
+write_grant        Yes         Yes         Yes         
+read_grant         Yes         Yes         Yes         
+write_reject       Yes         Yes         Yes         
+read_reject        Yes         Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+FSM Coverage for Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+Summary for FSM :: PSTATE
+            Total Covered Percent                         
+States      3     3       100.00  (Not included in score) 
+Transitions 4     3       75.00                           
+Sequences   0     0                                       
+
+State, Transition and Sequence Details for FSM :: PSTATE
+-------------------------------------------------------------------------------
+states Line No. Covered 
+'h0    485      Covered 
+'h1    498      Covered 
+'h2    513      Covered 
+
+transitions Line No. Covered     
+'h0->'h1    498      Covered     
+'h1->'h0    485      Not Covered 
+'h1->'h2    513      Covered     
+'h2->'h0    485      Covered     
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Instance : tb_top.dut.APB_v1_0_S00_AXI_inst(x)
+         Line No. Total Covered Percent 
+Branches          46    45      97.83   
+IF       193      4     4       100.00  
+IF       221      3     3       100.00  
+IF       238      3     3       100.00  
+IF       321      6     6       100.00  
+IF       355      3     3       100.00  
+IF       381      6     6       100.00  
+IF       442      4     4       100.00  
+IF       463      5     5       100.00  
+IF       484      12    11      91.67   
+
+
+193        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+194        	      axi_awready <= 1'b0;
+           	      ==>
+195        	      aw_en <= 1'b1;
+196        	  end 
+197        	  else begin    
+198        	      if (write_grant) begin
+           	      -2-  
+199        	          // slave is ready to accept write address when 
+200        	          // there is a valid write address and write data
+201        	          // on the write address and data bus. This design 
+202        	          // expects no outstanding transactions. 
+203        	          axi_awready <= 1'b1;
+           	          ==>
+204        	          aw_en <= 1'b0;
+205        	        end
+206        	        else if (S_AXI_BREADY && axi_bvalid) begin
+           	             -3-  
+207        	              aw_en <= 1'b1;
+           	              ==>
+208        	              axi_awready <= 1'b0;
+209        	            end
+210        	      else  begin
+211        	          axi_awready <= 1'b0;
+           	          ==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   1   Covered 
+0   0   0   Covered 
+
+
+221        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+222        	      axi_awaddr <= 0;
+           	      ==>
+223        	    end 
+224        	  else begin    
+225        	      if (write_grant) begin
+           	      -2-  
+226        	          // Write Address latching 
+227        	          axi_awaddr <= S_AXI_AWADDR;
+           	          ==>
+228        	        end
+           	        MISSING_ELSE
+           	        ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+238        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+239        	      axi_wready <= 1'b0;
+           	      ==>
+240        	    end 
+241        	  else begin    
+242        	      if (write_grant) begin
+           	      -2-  
+243        	          // slave is ready to accept write data when 
+244        	          // there is a valid write address and write data
+245        	          // on the write address and data bus. This design 
+246        	          // expects no outstanding transactions. 
+247        	          axi_wready <= 1'b1;
+           	          ==>
+248        	      end
+249        	      else begin axi_wready <= 1'b0; end
+           	      ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+321        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+322        	      axi_bvalid  <= 0;
+           	      ==>
+323        	      axi_bresp   <= 2'b0;
+324        	    end 
+325        	  else begin    
+326        	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+           	      -2-  
+328                      axi_bvalid <= 1'b1;
+                         ==>
+329                      axi_bresp <= 2'b10;
+330                  end
+331                  else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          -3-  
+332        	          // indicates a valid write response is available
+333        	          axi_bvalid <= 1'b1;
+334        	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+           	                                -4-  
+           	                                ==>  
+           	                                ==>  
+336        	        end                   // work error responses in future
+337        	      else begin
+338        	          if (S_AXI_BREADY && axi_bvalid) begin
+           	          -5-  
+339        	            //check if bready is asserted while bvalid is high) 
+340        	            //(there is a possibility that bready is always asserted high)   
+341        	              axi_bvalid <= 1'b0; 
+           	              ==>
+342        	          end  
+           	          MISSING_ELSE
+           	          ==>
+
+Branches:
+
+-1- -2- -3- -4- -5- Status  
+1   -   -   -   -   Covered 
+0   1   -   -   -   Covered 
+0   0   1   1   -   Covered 
+0   0   1   0   -   Covered 
+0   0   0   -   1   Covered 
+0   0   0   -   0   Covered 
+
+
+355        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+356        	      axi_arready <= 1'b0;
+           	      ==>
+357        	      axi_araddr  <= 32'b0;
+358        	  end 
+359        	  else begin    
+360        	      if (read_grant) begin
+           	      -2-  
+361        	          // indicates that the slave has acceped the valid read address
+362        	          axi_arready <= 1'b1;
+           	          ==>
+363        	          // Read address latching
+364        	          axi_araddr  <= S_AXI_ARADDR;
+365        	        end
+366        	      else begin
+367        	          axi_arready <= 1'b0;
+           	          ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+381        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  -1-  
+382        	      axi_rvalid <= 0;
+           	      ==>
+383        	      axi_rresp  <= 0;
+384        	  end 
+385        	  else begin    
+386        	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+           	      -2-  
+388                      axi_rvalid <= 1'b1;
+                         ==>
+389                      axi_rresp <= 2'b10;
+390                  end
+391                  else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          -3-  
+392        	          // Valid read data is available at the read data bus
+393        	          axi_rvalid <= 1'b1;
+394        	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+           	                                -4-  
+           	                                ==>  
+           	                                ==>  
+396        	      end   
+397        	      else if (axi_rvalid && S_AXI_RREADY) begin
+           	           -5-  
+398        	          // Read data is accepted by the master
+399        	          axi_rvalid <= 1'b0;
+           	          ==>
+400        	      end                
+           	      MISSING_ELSE
+           	      ==>
+
+Branches:
+
+-1- -2- -3- -4- -5- Status  
+1   -   -   -   -   Covered 
+0   1   -   -   -   Covered 
+0   0   1   1   -   Covered 
+0   0   1   0   -   Covered 
+0   0   0   -   1   Covered 
+0   0   0   -   0   Covered 
+
+
+442                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+443                    PADDR <= 0;
+                       ==>
+444                    apb_prot <= 0;
+445                end
+446        	    else begin    
+447        	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+           	        -2-  
+448                        PADDR <= S_AXI_ARADDR;
+                           ==>
+449                        apb_prot <= S_AXI_ARPROT;
+450                    end
+451                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            -3-  
+452                        PADDR <= S_AXI_AWADDR;
+                           ==>
+453                        apb_prot <= S_AXI_AWPROT;
+454                    end
+                       MISSING_ELSE
+                       ==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   1   Covered 
+0   0   0   Covered 
+
+
+463                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+464                    PWDATA <= 0;
+                       ==>
+465                    PSTRB <= 0;
+466                end
+467                else begin
+468                    if (slv_reg_rden && (PSTATE == 2'b00)) begin
+                       -2-  
+469                        PWDATA <= 0;
+                           ==>
+470                        PSTRB <= 0;
+471                    end
+472                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            -3-  
+473                        if (S_AXI_AWADDR[1]) begin
+                           -4-  
+474                            PWDATA <= S_AXI_WDATA[31:16];
+                               ==>
+475                            PSTRB  <= S_AXI_WSTRB[3:2];
+476                        end else begin
+477                            PWDATA <= S_AXI_WDATA[15:0];
+                               ==>
+478                            PSTRB  <= S_AXI_WSTRB[1:0];
+479                        end
+480                    end
+                       MISSING_ELSE
+                       ==>
+
+Branches:
+
+-1- -2- -3- -4- Status  
+1   -   -   -   Covered 
+0   1   -   -   Covered 
+0   0   1   1   Covered 
+0   0   1   0   Covered 
+0   0   0   -   Covered 
+
+
+484                if ( S_AXI_ARESETN == 1'b0 )begin
+                   -1-  
+485                    PSTATE <= 0;
+                       ==>
+486                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+487                    axi_rdata <= 0;
+488                end
+489                else begin
+490                    case (PSTATE)
+                       -2-  
+491                        2'b00 : begin
+492                            if (slv_reg_rden) begin
+                               -3-  
+493                                if (read_reject) begin
+                                   -4-  
+494                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+                                       ==>
+495                                    axi_rdata <= 0;
+496                                end else begin
+497                                    {PSEL,PENABLE,PWRITE} <= 3'b100;
+                                       ==>
+498                                    PSTATE <= 2'b01;
+499                                end
+500                            end
+501                            else if (slv_reg_wren) begin
+                                    -5-  
+502                                if (write_reject) begin
+                                   -6-  
+503                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+                                       ==>
+504                                end else begin
+505                                    {PSEL,PENABLE,PWRITE} <= 3'b101;
+                                       ==>
+506                                    PSTATE <= 2'b01;
+507                                end
+508                            end
+509                            else {PSEL,PENABLE,PWRITE} <= {3'b000};
+                               ==>
+510                        end
+511                        2'b01 : begin
+512                                {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+                                   ==>
+513                                PSTATE <= 2'b10;
+514                        end
+515                        2'b10 : begin
+516                            if(PREADY == 1'b1)begin
+                               -7-  
+517                                {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518                                PSTATE <= 2'b00;
+519                                // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                // PADDR is already latched with the read address at this point, so it can be used as is.
+522                                if(!PWRITE) begin
+                                   -8-  
+523                                    if (PADDR[1])
+                                       -9-  
+524                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+                                           ==>
+525                                    else
+526                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+                                           ==>
+527                                end
+                                   MISSING_ELSE
+                                   ==>
+528                            end
+                               MISSING_ELSE
+                               ==>
+529                        end
+530                        default : begin
+531                                {PSEL,PENABLE,PWRITE} <= {3'b000};
+                                   ==>
+
+Branches:
+
+-1- -2-     -3- -4- -5- -6- -7- -8- -9- Status      
+1   -       -   -   -   -   -   -   -   Covered     
+0   2'b00   1   1   -   -   -   -   -   Covered     
+0   2'b00   1   0   -   -   -   -   -   Covered     
+0   2'b00   0   -   1   1   -   -   -   Covered     
+0   2'b00   0   -   1   0   -   -   -   Covered     
+0   2'b00   0   -   0   -   -   -   -   Covered     
+0   2'b01   -   -   -   -   -   -   -   Covered     
+0   2'b10   -   -   -   -   1   1   1   Covered     
+0   2'b10   -   -   -   -   1   1   0   Covered     
+0   2'b10   -   -   -   -   1   0   -   Covered     
+0   2'b10   -   -   -   -   0   -   -   Covered     
+0   default -   -   -   -   -   -   -   Not Covered 
+
+
+===============================================================================
+Module : APB_v1_0
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 92.43 100.00 --      77.30 --     100.00 
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/rtl/APB_v1_0.v
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME       
+ 92.43 100.00 --      77.30 --     100.00 tb_top.dut 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : APB_v1_0
+
+             Line No.   Total   Covered  Percent
+TOTAL                       15       15   100.00
+ALWAYS             71       15       15   100.00
+
+70                      	always @(*)begin
+71         1/1          		if(PSEL_UART)begin
+72         1/1          			rPRDATA  =	PRDATA_UART;	 
+73         1/1          			rPREADY   =	PREADY_UART;	
+74         1/1          			rPSLVERR =	PSLVERR_UART; 
+75                      		end
+76         1/1          		else if(PSEL_GPIO)begin
+77         1/1          			rPRDATA  =	PRDATA_GPIO;	 
+78         1/1          			rPREADY   =	PREADY_GPIO;	
+79         1/1          			rPSLVERR =	PSLVERR_GPIO; 
+80                      		end
+81                      
+82         1/1          		else if(PSEL_TIMER)begin
+83         1/1          			rPRDATA  =	PRDATA_TIMER;	 
+84         1/1          			rPREADY   =	PREADY_TIMER;	
+85         1/1          			rPSLVERR =	PSLVERR_TIMER; 
+86                      		end
+87                      		else begin
+88         1/1          			rPRDATA  =	0;	 
+89                                  // Default error sink: unmapped accesses (PADDR[14:12] = 0, 4..7)
+90                                  // complete with SLVERR instead of waiting forever. The core only
+91                                  // consumes these values during its APB ACCESS state.
+92         1/1          			rPREADY   =	1;
+93         1/1          			rPSLVERR =	1;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : APB_v1_0
+                Total Covered Percent 
+Totals          42    38      90.48   
+Total Bits      564   436     77.30   
+Total Bits 0->1 282   219     77.66   
+Total Bits 1->0 282   217     76.95   
+
+                              
+Ports          39  35  89.74  
+Port Bits      528 400 75.76  
+Port Bits 0->1 264 201 76.14  
+Port Bits 1->0 264 199 75.38  
+
+                              
+Signals          3  3  100.00 
+Signal Bits      36 36 100.00 
+Signal Bits 0->1 18 18 100.00 
+Signal Bits 1->0 18 18 100.00 
+
+Port Details
+                      Toggle      Toggle 1->0 Toggle 0->1 Direction 
+s00_axi_aclk          Yes         Yes         Yes         INPUT     
+s00_axi_aresetn       No          No          Yes         INPUT     
+s00_axi_awaddr[6:0]   Yes         Yes         Yes         INPUT     
+s00_axi_awaddr[7]     No          No          No          INPUT     
+s00_axi_awaddr[8]     Yes         Yes         Yes         INPUT     
+s00_axi_awaddr[11:9]  No          No          No          INPUT     
+s00_axi_awaddr[13:12] Yes         Yes         Yes         INPUT     
+s00_axi_awaddr[29:14] No          No          No          INPUT     
+s00_axi_awaddr[30]    Yes         Yes         Yes         INPUT     
+s00_axi_awaddr[31]    No          No          No          INPUT     
+s00_axi_awprot[2:0]   Yes         Yes         Yes         INPUT     
+s00_axi_awvalid       Yes         Yes         Yes         INPUT     
+s00_axi_awready       Yes         Yes         Yes         OUTPUT    
+s00_axi_wdata[31:0]   Yes         Yes         Yes         INPUT     
+s00_axi_wstrb[3:0]    Yes         Yes         Yes         INPUT     
+s00_axi_wvalid        Yes         Yes         Yes         INPUT     
+s00_axi_wready        Yes         Yes         Yes         OUTPUT    
+s00_axi_bresp[0]      Unreachable Unreachable Unreachable OUTPUT    
+s00_axi_bresp[1]      Yes         Yes         Yes         OUTPUT    
+s00_axi_bvalid        Yes         Yes         Yes         OUTPUT    
+s00_axi_bready        Yes         Yes         Yes         INPUT     
+s00_axi_araddr[6:0]   Yes         Yes         Yes         INPUT     
+s00_axi_araddr[7]     No          No          No          INPUT     
+s00_axi_araddr[8]     Yes         Yes         Yes         INPUT     
+s00_axi_araddr[11:9]  No          No          No          INPUT     
+s00_axi_araddr[13:12] Yes         Yes         Yes         INPUT     
+s00_axi_araddr[29:14] No          No          No          INPUT     
+s00_axi_araddr[30]    Yes         Yes         Yes         INPUT     
+s00_axi_araddr[31]    No          No          No          INPUT     
+s00_axi_arprot[2:0]   Yes         Yes         Yes         INPUT     
+s00_axi_arvalid       Yes         Yes         Yes         INPUT     
+s00_axi_arready       Yes         Yes         Yes         OUTPUT    
+s00_axi_rdata[31:0]   Yes         Yes         Yes         OUTPUT    
+s00_axi_rresp[0]      Unreachable Unreachable Unreachable OUTPUT    
+s00_axi_rresp[1]      Yes         Yes         Yes         OUTPUT    
+s00_axi_rvalid        Yes         Yes         Yes         OUTPUT    
+s00_axi_rready        Yes         Yes         Yes         INPUT     
+PADDR[6:0]            Yes         Yes         Yes         OUTPUT    
+PADDR[7]              No          No          No          OUTPUT    
+PADDR[8]              Yes         Yes         Yes         OUTPUT    
+PADDR[11:9]           No          No          No          OUTPUT    
+PADDR[13:12]          Yes         Yes         Yes         OUTPUT    
+PADDR[29:14]          No          No          No          OUTPUT    
+PADDR[30]             No          No          Yes         OUTPUT    
+PADDR[31]             No          No          No          OUTPUT    
+PSEL_UART             Yes         Yes         Yes         OUTPUT    
+PSEL_GPIO             Yes         Yes         Yes         OUTPUT    
+PSEL_TIMER            Yes         Yes         Yes         OUTPUT    
+PENABLE               Yes         Yes         Yes         OUTPUT    
+PWRITE                Yes         Yes         Yes         OUTPUT    
+PWDATA[15:0]          Yes         Yes         Yes         OUTPUT    
+PSTRB[1:0]            Yes         Yes         Yes         OUTPUT    
+PPROT[2:0]            Yes         Yes         Yes         OUTPUT    
+PREADY_UART           Yes         Yes         Yes         INPUT     
+PREADY_GPIO           Yes         Yes         Yes         INPUT     
+PREADY_TIMER          Yes         Yes         Yes         INPUT     
+PSLVERR_UART          Yes         Yes         Yes         INPUT     
+PSLVERR_GPIO          Yes         Yes         Yes         INPUT     
+PSLVERR_TIMER         Yes         Yes         Yes         INPUT     
+PRDATA_UART[15:0]     Yes         Yes         Yes         INPUT     
+PRDATA_GPIO[15:0]     Yes         Yes         Yes         INPUT     
+PRDATA_TIMER[15:0]    Yes         Yes         Yes         INPUT     
+
+Signal Details
+              Toggle Toggle 1->0 Toggle 0->1 
+rPRDATA[15:0] Yes    Yes         Yes         
+rPREADY       Yes    Yes         Yes         
+rPSLVERR      Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : APB_v1_0
+         Line No. Total Covered Percent 
+Branches          4     4       100.00  
+IF       71       4     4       100.00  
+
+
+71         		if(PSEL_UART)begin
+           		-1-  
+72         			rPRDATA  =	PRDATA_UART;	 
+           			==>
+73         			rPREADY   =	PREADY_UART;	
+74         			rPSLVERR =	PSLVERR_UART; 
+75         		end
+76         		else if(PSEL_GPIO)begin
+           		     -2-  
+77         			rPRDATA  =	PRDATA_GPIO;	 
+           			==>
+78         			rPREADY   =	PREADY_GPIO;	
+79         			rPSLVERR =	PSLVERR_GPIO; 
+80         		end
+81         
+82         		else if(PSEL_TIMER)begin
+           		     -3-  
+83         			rPRDATA  =	PRDATA_TIMER;	 
+           			==>
+84         			rPREADY   =	PREADY_TIMER;	
+85         			rPSLVERR =	PSLVERR_TIMER; 
+86         		end
+87         		else begin
+88         			rPRDATA  =	0;	 
+           			==>
+
+Branches:
+
+-1- -2- -3- Status  
+1   -   -   Covered 
+0   1   -   Covered 
+0   0   1   Covered 
+0   0   0   Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_top.dut
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 92.43 100.00 --      77.30 --     100.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 86.07  98.21  86.40  72.73  75.00  98.00 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME     
+ 92.43 100.00 --      77.30 --     100.00 APB_v1_0 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME      
+--     --     --     --     --     --     tb_top(X) 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                     
+ 85.23  97.94  86.40  68.99  75.00  97.83 APB_v1_0_S00_AXI_inst(x) 
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : tb_top(X)
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+--     --     --     --     --     --     
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/tb_top.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME      
+--     --     --     --     --     --     tb_top(X) 
+
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_top(X)
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+--     --     --     --     --     --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 86.07  98.21  86.40  72.73  75.00  98.00 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME      
+--     --     --     --     --     --     tb_top(X) 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 86.07  98.21  86.40  72.73  75.00  98.00 dut  
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.

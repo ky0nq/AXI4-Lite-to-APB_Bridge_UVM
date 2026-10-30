@@ -1,0 +1,2114 @@
+Group : bridge_pkg::bridge_coverage::abort_cg
+
+===============================================================================
+Group : bridge_pkg::bridge_coverage::abort_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+  0.00   0.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                   
+  0.00 1      100    1        64           64            tb_top.me.obj.abort_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::bridge_coverage::abort_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 4        4         0       0.00    
+Crosses   4        4         0       0.00    
+
+
+Variables for Group  bridge_pkg::bridge_coverage::abort_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        2         0       0.00    100  1      1        0                    
+cp_stage     2        2         0       0.00    100  1      1        0                    
+
+
+Crosses for Group  bridge_pkg::bridge_coverage::abort_cg
+
+
+CROSS           EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_stage 4        4         0       0.00    100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for cp_direction
+
+
+Uncovered bins
+
+NAME  COUNT AT LEAST NUMBER STATUS 
+write 0     1        1             
+read  0     1        1             
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_stage
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for cp_stage
+
+
+Uncovered bins
+
+NAME             COUNT AT LEAST NUMBER STATUS 
+pending_response 0     1        1             
+pending_apb      0     1        1             
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_stage
+
+
+Samples crossed: cp_direction cp_stage
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        4         0       0.00    4       
+
+
+Automatically Generated Cross Bins for direction_stage
+
+
+Uncovered bins
+
+cp_direction cp_stage COUNT AT LEAST NUMBER STATUS 
+*            *        --    --       4             
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.abort_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+  0.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                  
+  0.00   0.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::abort_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.abort_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 4        4         0       0.00    
+Crosses   4        4         0       0.00    
+
+
+Variables for Group Instance  tb_top.me.obj.abort_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        2         0       0.00    100  1      1        0                    
+cp_stage     2        2         0       0.00    100  1      1        0                    
+
+
+Crosses for Group Instance  tb_top.me.obj.abort_cg
+
+
+CROSS           EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_stage 4        4         0       0.00    100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for cp_direction
+
+
+Uncovered bins
+
+NAME  COUNT AT LEAST NUMBER STATUS 
+write 0     1        1             
+read  0     1        1             
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_stage
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for cp_stage
+
+
+Uncovered bins
+
+NAME             COUNT AT LEAST NUMBER STATUS 
+pending_response 0     1        1             
+pending_apb      0     1        1             
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_stage
+
+
+Samples crossed: cp_direction cp_stage
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        4         0       0.00    4       
+
+
+Automatically Generated Cross Bins for direction_stage
+
+
+Uncovered bins
+
+cp_direction cp_stage COUNT AT LEAST NUMBER STATUS 
+*            *        --    --       4             
+
+
+Group : bridge_pkg::axi_coverage::response_cg
+
+===============================================================================
+Group : bridge_pkg::axi_coverage::response_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+ 88.79  88.79    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/axi_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                      
+ 88.79 1      100    1        64           64            tb_top.me.obj.response_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::axi_coverage::response_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 23       3         20      89.17   
+Crosses   41       5         36      88.33   
+
+
+Variables for Group  bridge_pkg::axi_coverage::response_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_resp      2        0         2       100.00  100  1      1        0                    
+cp_decode    4        1         3       75.00   100  1      1        0                    
+cp_cause     5        2         3       60.00   100  1      1        0                    
+cp_prot      8        0         8       100.00  100  1      1        0                    
+cp_lane      2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  bridge_pkg::axi_coverage::response_cg
+
+
+CROSS            EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_resp   4        0         4       100.00  100  1      1        0                     
+direction_decode 8        2         6       75.00   100  1      1        0                     
+direction_cause  9        3         6       66.67   100  1      1        0                     
+direction_prot   16       0         16      100.00  100  1      1        0                     
+direction_lane   4        0         4       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5745  1               
+read  6870  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_resp
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_resp
+
+
+Bins
+
+NAME   COUNT AT LEAST STATUS 
+slverr 3194  1               
+okay   9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_decode
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        1         3       75.00   
+
+
+User Defined Bins for cp_decode
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER STATUS 
+unmapped 0     1        1             
+
+
+Covered bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2828  1               
+gpio  4502  1               
+uart  5285  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cause
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        2         3       60.00   
+
+
+User Defined Bins for cp_cause
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER STATUS 
+lane     0     1        1             
+unmapped 0     1        1             
+
+
+Covered bins
+
+NAME       COUNT AT LEAST STATUS 
+pslverr    2668  1               
+misaligned 526   1               
+okay       9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prot
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 8        0         8       100.00  
+
+
+User Defined Bins for cp_prot
+
+
+Bins
+
+NAME    COUNT AT LEAST STATUS 
+value_0 9502  1               
+value_1 527   1               
+value_2 484   1               
+value_3 355   1               
+value_4 358   1               
+value_5 490   1               
+value_6 399   1               
+value_7 500   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_lane
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_lane
+
+
+Bins
+
+NAME      COUNT AT LEAST STATUS 
+high_half 4313  1               
+low_half  8302  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_resp
+
+
+Samples crossed: cp_direction cp_resp
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_resp
+
+
+Bins
+
+cp_direction cp_resp COUNT AT LEAST STATUS 
+write        slverr  1320  1               
+write        okay    4425  1               
+read         slverr  1874  1               
+read         okay    4996  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_decode
+
+
+Samples crossed: cp_direction cp_decode
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 8        2         6       75.00   2       
+
+
+Automatically Generated Cross Bins for direction_decode
+
+
+Element holes
+
+cp_direction cp_decode  COUNT AT LEAST NUMBER STATUS 
+*            [unmapped] --    --       2             
+
+
+Covered bins
+
+cp_direction cp_decode COUNT AT LEAST STATUS 
+write        timer     1262  1               
+write        gpio      1194  1               
+write        uart      3289  1               
+read         timer     1566  1               
+read         gpio      3308  1               
+read         uart      1996  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_cause
+
+
+Samples crossed: cp_direction cp_cause
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+TOTAL                              9        3         6       66.67   3       
+Automatically Generated Cross Bins 9        3         6       66.67   3       
+User Defined Cross Bins            0        0         0                       
+
+
+Automatically Generated Cross Bins for direction_cause
+
+
+Uncovered bins
+
+cp_direction cp_cause   COUNT AT LEAST NUMBER STATUS 
+[write]      [lane]     0     1        1             
+[write]      [unmapped] 0     1        1             
+[read]       [unmapped] 0     1        1             
+
+
+Covered bins
+
+cp_direction cp_cause   COUNT AT LEAST STATUS 
+write        pslverr    1062  1               
+write        misaligned 258   1               
+write        okay       4425  1               
+read         pslverr    1606  1               
+read         misaligned 268   1               
+read         okay       4996  1               
+
+
+User Defined Cross Bins for direction_cause
+
+
+Excluded/Illegal bins
+
+NAME      COUNT STATUS   
+read_lane 0     Excluded 
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_prot
+
+
+Samples crossed: cp_direction cp_prot
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 16       0         16      100.00          
+
+
+Automatically Generated Cross Bins for direction_prot
+
+
+Bins
+
+cp_direction cp_prot COUNT AT LEAST STATUS 
+write        value_0 4525  1               
+write        value_1 254   1               
+write        value_2 248   1               
+write        value_3 111   1               
+write        value_4 107   1               
+write        value_5 119   1               
+write        value_6 132   1               
+write        value_7 249   1               
+read         value_0 4977  1               
+read         value_1 273   1               
+read         value_2 236   1               
+read         value_3 244   1               
+read         value_4 251   1               
+read         value_5 371   1               
+read         value_6 267   1               
+read         value_7 251   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_lane
+
+
+Samples crossed: cp_direction cp_lane
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_lane
+
+
+Bins
+
+cp_direction cp_lane   COUNT AT LEAST STATUS 
+write        high_half 1861  1               
+write        low_half  3884  1               
+read         high_half 2452  1               
+read         low_half  4418  1               
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.response_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 88.79 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                  
+ 88.79  88.79    1      100    1        1            64           64                    bridge_pkg::axi_coverage::response_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.response_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 23       3         20      89.17   
+Crosses   41       5         36      88.33   
+
+
+Variables for Group Instance  tb_top.me.obj.response_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_resp      2        0         2       100.00  100  1      1        0                    
+cp_decode    4        1         3       75.00   100  1      1        0                    
+cp_cause     5        2         3       60.00   100  1      1        0                    
+cp_prot      8        0         8       100.00  100  1      1        0                    
+cp_lane      2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group Instance  tb_top.me.obj.response_cg
+
+
+CROSS            EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_resp   4        0         4       100.00  100  1      1        0                     
+direction_decode 8        2         6       75.00   100  1      1        0                     
+direction_cause  9        3         6       66.67   100  1      1        0                     
+direction_prot   16       0         16      100.00  100  1      1        0                     
+direction_lane   4        0         4       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5745  1               
+read  6870  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_resp
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_resp
+
+
+Bins
+
+NAME   COUNT AT LEAST STATUS 
+slverr 3194  1               
+okay   9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_decode
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        1         3       75.00   
+
+
+User Defined Bins for cp_decode
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER STATUS 
+unmapped 0     1        1             
+
+
+Covered bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2828  1               
+gpio  4502  1               
+uart  5285  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cause
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        2         3       60.00   
+
+
+User Defined Bins for cp_cause
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER STATUS 
+lane     0     1        1             
+unmapped 0     1        1             
+
+
+Covered bins
+
+NAME       COUNT AT LEAST STATUS 
+pslverr    2668  1               
+misaligned 526   1               
+okay       9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prot
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 8        0         8       100.00  
+
+
+User Defined Bins for cp_prot
+
+
+Bins
+
+NAME    COUNT AT LEAST STATUS 
+value_0 9502  1               
+value_1 527   1               
+value_2 484   1               
+value_3 355   1               
+value_4 358   1               
+value_5 490   1               
+value_6 399   1               
+value_7 500   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_lane
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_lane
+
+
+Bins
+
+NAME      COUNT AT LEAST STATUS 
+high_half 4313  1               
+low_half  8302  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_resp
+
+
+Samples crossed: cp_direction cp_resp
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_resp
+
+
+Bins
+
+cp_direction cp_resp COUNT AT LEAST STATUS 
+write        slverr  1320  1               
+write        okay    4425  1               
+read         slverr  1874  1               
+read         okay    4996  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_decode
+
+
+Samples crossed: cp_direction cp_decode
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 8        2         6       75.00   2       
+
+
+Automatically Generated Cross Bins for direction_decode
+
+
+Element holes
+
+cp_direction cp_decode  COUNT AT LEAST NUMBER STATUS 
+*            [unmapped] --    --       2             
+
+
+Covered bins
+
+cp_direction cp_decode COUNT AT LEAST STATUS 
+write        timer     1262  1               
+write        gpio      1194  1               
+write        uart      3289  1               
+read         timer     1566  1               
+read         gpio      3308  1               
+read         uart      1996  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_cause
+
+
+Samples crossed: cp_direction cp_cause
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+TOTAL                              9        3         6       66.67   3       
+Automatically Generated Cross Bins 9        3         6       66.67   3       
+User Defined Cross Bins            0        0         0                       
+
+
+Automatically Generated Cross Bins for direction_cause
+
+
+Uncovered bins
+
+cp_direction cp_cause   COUNT AT LEAST NUMBER STATUS 
+[write]      [lane]     0     1        1             
+[write]      [unmapped] 0     1        1             
+[read]       [unmapped] 0     1        1             
+
+
+Covered bins
+
+cp_direction cp_cause   COUNT AT LEAST STATUS 
+write        pslverr    1062  1               
+write        misaligned 258   1               
+write        okay       4425  1               
+read         pslverr    1606  1               
+read         misaligned 268   1               
+read         okay       4996  1               
+
+
+User Defined Cross Bins for direction_cause
+
+
+Excluded/Illegal bins
+
+NAME      COUNT STATUS   
+read_lane 0     Excluded 
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_prot
+
+
+Samples crossed: cp_direction cp_prot
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 16       0         16      100.00          
+
+
+Automatically Generated Cross Bins for direction_prot
+
+
+Bins
+
+cp_direction cp_prot COUNT AT LEAST STATUS 
+write        value_0 4525  1               
+write        value_1 254   1               
+write        value_2 248   1               
+write        value_3 111   1               
+write        value_4 107   1               
+write        value_5 119   1               
+write        value_6 132   1               
+write        value_7 249   1               
+read         value_0 4977  1               
+read         value_1 273   1               
+read         value_2 236   1               
+read         value_3 244   1               
+read         value_4 251   1               
+read         value_5 371   1               
+read         value_6 267   1               
+read         value_7 251   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_lane
+
+
+Samples crossed: cp_direction cp_lane
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_lane
+
+
+Bins
+
+cp_direction cp_lane   COUNT AT LEAST STATUS 
+write        high_half 1861  1               
+write        low_half  3884  1               
+read         high_half 2452  1               
+read         low_half  4418  1               
+
+
+Group : bridge_pkg::apb_coverage::transfer_cg
+
+===============================================================================
+Group : bridge_pkg::apb_coverage::transfer_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+ 96.00  96.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/apb_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                      
+ 96.00 1      100    1        64           64            tb_top.me.obj.transfer_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::apb_coverage::transfer_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 18       1         17      96.67   
+Crosses   30       2         28      95.00   
+
+
+Variables for Group  bridge_pkg::apb_coverage::transfer_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_slave     3        0         3       100.00  100  1      1        0                    
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_lane      2        0         2       100.00  100  1      1        0                    
+cp_strobes   4        0         4       100.00  100  1      1        0                    
+cp_wait      5        1         4       80.00   100  1      1        0                    
+cp_error     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  bridge_pkg::apb_coverage::transfer_cg
+
+
+CROSS           EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+slave_direction 6        0         6       100.00  100  1      1        0                     
+lane_strobes    8        0         8       100.00  100  1      1        0                     
+slave_error     6        0         6       100.00  100  1      1        0                     
+direction_wait  10       2         8       80.00   100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2656  1               
+gpio  4339  1               
+uart  5094  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5487  1               
+read  6602  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_lane
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_lane
+
+
+Bins
+
+NAME      COUNT AT LEAST STATUS 
+high_half 4041  1               
+low_half  8048  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_strobes
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        0         4       100.00  
+
+
+User Defined Bins for cp_strobes
+
+
+Bins
+
+NAME       COUNT AT LEAST STATUS 
+both_bytes 4384  1               
+high_byte  360   1               
+low_byte   387   1               
+no_bytes   356   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_wait
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        1         4       80.00   
+
+
+User Defined Bins for cp_wait
+
+
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER STATUS 
+extended_wait 0     1        1             
+
+
+Covered bins
+
+NAME       COUNT AT LEAST STATUS 
+long_wait  4957  1               
+short_wait 5246  1               
+one        919   1               
+zero       967   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_error
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_error
+
+
+Bins
+
+NAME   COUNT AT LEAST STATUS 
+slverr 2668  1               
+okay   9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_direction
+
+
+Samples crossed: cp_slave cp_direction
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for slave_direction
+
+
+Bins
+
+cp_slave cp_direction COUNT AT LEAST STATUS 
+timer    write        1172  1               
+timer    read         1484  1               
+gpio     write        1120  1               
+gpio     read         3219  1               
+uart     write        3195  1               
+uart     read         1899  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross lane_strobes
+
+
+Samples crossed: cp_lane cp_strobes
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 8        0         8       100.00          
+
+
+Automatically Generated Cross Bins for lane_strobes
+
+
+Bins
+
+cp_lane   cp_strobes COUNT AT LEAST STATUS 
+high_half both_bytes 1165  1               
+high_half high_byte  184   1               
+high_half low_byte   199   1               
+high_half no_bytes   178   1               
+low_half  both_bytes 3219  1               
+low_half  high_byte  176   1               
+low_half  low_byte   188   1               
+low_half  no_bytes   178   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_error
+
+
+Samples crossed: cp_slave cp_error
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for slave_error
+
+
+Bins
+
+cp_slave cp_error COUNT AT LEAST STATUS 
+timer    slverr   843   1               
+timer    okay     1813  1               
+gpio     slverr   844   1               
+gpio     okay     3495  1               
+uart     slverr   981   1               
+uart     okay     4113  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_wait
+
+
+Samples crossed: cp_direction cp_wait
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 10       2         8       80.00   2       
+
+
+Automatically Generated Cross Bins for direction_wait
+
+
+Element holes
+
+cp_direction cp_wait         COUNT AT LEAST NUMBER STATUS 
+*            [extended_wait] --    --       2             
+
+
+Covered bins
+
+cp_direction cp_wait    COUNT AT LEAST STATUS 
+write        long_wait  2083  1               
+write        short_wait 2575  1               
+write        one        420   1               
+write        zero       409   1               
+read         long_wait  2874  1               
+read         short_wait 2671  1               
+read         one        499   1               
+read         zero       558   1               
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.transfer_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 96.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                  
+ 96.00  96.00    1      100    1        1            64           64                    bridge_pkg::apb_coverage::transfer_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.transfer_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 18       1         17      96.67   
+Crosses   30       2         28      95.00   
+
+
+Variables for Group Instance  tb_top.me.obj.transfer_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_slave     3        0         3       100.00  100  1      1        0                    
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_lane      2        0         2       100.00  100  1      1        0                    
+cp_strobes   4        0         4       100.00  100  1      1        0                    
+cp_wait      5        1         4       80.00   100  1      1        0                    
+cp_error     2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group Instance  tb_top.me.obj.transfer_cg
+
+
+CROSS           EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+slave_direction 6        0         6       100.00  100  1      1        0                     
+lane_strobes    8        0         8       100.00  100  1      1        0                     
+slave_error     6        0         6       100.00  100  1      1        0                     
+direction_wait  10       2         8       80.00   100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2656  1               
+gpio  4339  1               
+uart  5094  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5487  1               
+read  6602  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_lane
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_lane
+
+
+Bins
+
+NAME      COUNT AT LEAST STATUS 
+high_half 4041  1               
+low_half  8048  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_strobes
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        0         4       100.00  
+
+
+User Defined Bins for cp_strobes
+
+
+Bins
+
+NAME       COUNT AT LEAST STATUS 
+both_bytes 4384  1               
+high_byte  360   1               
+low_byte   387   1               
+no_bytes   356   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_wait
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        1         4       80.00   
+
+
+User Defined Bins for cp_wait
+
+
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER STATUS 
+extended_wait 0     1        1             
+
+
+Covered bins
+
+NAME       COUNT AT LEAST STATUS 
+long_wait  4957  1               
+short_wait 5246  1               
+one        919   1               
+zero       967   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_error
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_error
+
+
+Bins
+
+NAME   COUNT AT LEAST STATUS 
+slverr 2668  1               
+okay   9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_direction
+
+
+Samples crossed: cp_slave cp_direction
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for slave_direction
+
+
+Bins
+
+cp_slave cp_direction COUNT AT LEAST STATUS 
+timer    write        1172  1               
+timer    read         1484  1               
+gpio     write        1120  1               
+gpio     read         3219  1               
+uart     write        3195  1               
+uart     read         1899  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross lane_strobes
+
+
+Samples crossed: cp_lane cp_strobes
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 8        0         8       100.00          
+
+
+Automatically Generated Cross Bins for lane_strobes
+
+
+Bins
+
+cp_lane   cp_strobes COUNT AT LEAST STATUS 
+high_half both_bytes 1165  1               
+high_half high_byte  184   1               
+high_half low_byte   199   1               
+high_half no_bytes   178   1               
+low_half  both_bytes 3219  1               
+low_half  high_byte  176   1               
+low_half  low_byte   188   1               
+low_half  no_bytes   178   1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_error
+
+
+Samples crossed: cp_slave cp_error
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for slave_error
+
+
+Bins
+
+cp_slave cp_error COUNT AT LEAST STATUS 
+timer    slverr   843   1               
+timer    okay     1813  1               
+gpio     slverr   844   1               
+gpio     okay     3495  1               
+uart     slverr   981   1               
+uart     okay     4113  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_wait
+
+
+Samples crossed: cp_direction cp_wait
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 10       2         8       80.00   2       
+
+
+Automatically Generated Cross Bins for direction_wait
+
+
+Element holes
+
+cp_direction cp_wait         COUNT AT LEAST NUMBER STATUS 
+*            [extended_wait] --    --       2             
+
+
+Covered bins
+
+cp_direction cp_wait    COUNT AT LEAST STATUS 
+write        long_wait  2083  1               
+write        short_wait 2575  1               
+write        one        420   1               
+write        zero       409   1               
+read         long_wait  2874  1               
+read         short_wait 2671  1               
+read         one        499   1               
+read         zero       558   1               
+
+
+Group : bridge_pkg::bridge_coverage::read_history_cg
+
+===============================================================================
+Group : bridge_pkg::bridge_coverage::read_history_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+100.00 100.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                          
+100.00 1      100    1        64           64            tb_top.me.obj.read_history_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::bridge_coverage::read_history_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 3        0         3       100.00  
+
+
+Variables for Group  bridge_pkg::bridge_coverage::read_history_cg
+
+
+VARIABLE   EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_history 3        0         3       100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_history
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_history
+
+
+Bins
+
+NAME              COUNT AT LEAST STATUS 
+after_error_write 1005  1               
+after_write       3707  1               
+fresh             1890  1               
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.read_history_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                         
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::read_history_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.read_history_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 3        0         3       100.00  
+
+
+Variables for Group Instance  tb_top.me.obj.read_history_cg
+
+
+VARIABLE   EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_history 3        0         3       100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_history
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_history
+
+
+Bins
+
+NAME              COUNT AT LEAST STATUS 
+after_error_write 1005  1               
+after_write       3707  1               
+fresh             1890  1               
+
+
+Group : bridge_pkg::bridge_coverage::outcome_cg
+
+===============================================================================
+Group : bridge_pkg::bridge_coverage::outcome_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+100.00 100.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                     
+100.00 1      100    1        64           64            tb_top.me.obj.outcome_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::bridge_coverage::outcome_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 5        0         5       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group  bridge_pkg::bridge_coverage::outcome_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_outcome   3        0         3       100.00  100  1      1        0                    
+
+
+Crosses for Group  bridge_pkg::bridge_coverage::outcome_cg
+
+
+CROSS             EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_outcome 6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5745  1               
+read  6870  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_outcome
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_outcome
+
+
+Bins
+
+NAME     COUNT AT LEAST STATUS 
+rejected 526   1               
+pslverr  2668  1               
+okay     9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_outcome
+
+
+Samples crossed: cp_direction cp_outcome
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for direction_outcome
+
+
+Bins
+
+cp_direction cp_outcome COUNT AT LEAST STATUS 
+write        rejected   258   1               
+write        pslverr    1062  1               
+write        okay       4425  1               
+read         rejected   268   1               
+read         pslverr    1606  1               
+read         okay       4996  1               
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.outcome_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                    
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::outcome_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.outcome_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 5        0         5       100.00  
+Crosses   6        0         6       100.00  
+
+
+Variables for Group Instance  tb_top.me.obj.outcome_cg
+
+
+VARIABLE     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_direction 2        0         2       100.00  100  1      1        0                    
+cp_outcome   3        0         3       100.00  100  1      1        0                    
+
+
+Crosses for Group Instance  tb_top.me.obj.outcome_cg
+
+
+CROSS             EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_outcome 6        0         6       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_direction
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_direction
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5745  1               
+read  6870  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_outcome
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_outcome
+
+
+Bins
+
+NAME     COUNT AT LEAST STATUS 
+rejected 526   1               
+pslverr  2668  1               
+okay     9421  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_outcome
+
+
+Samples crossed: cp_direction cp_outcome
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for direction_outcome
+
+
+Bins
+
+cp_direction cp_outcome COUNT AT LEAST STATUS 
+write        rejected   258   1               
+write        pslverr    1062  1               
+write        okay       4425  1               
+read         rejected   268   1               
+read         pslverr    1606  1               
+read         okay       4996  1               
+
+
+Group : bridge_pkg::bridge_coverage::transition_cg
+
+===============================================================================
+Group : bridge_pkg::bridge_coverage::transition_cg
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+100.00 100.00    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/home/pedu23/odai2/axi4lite_apb_bridge_uvm/tb/bridge_coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                        
+100.00 1      100    1        64           64            tb_top.me.obj.transition_cg 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   bridge_pkg::bridge_coverage::transition_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 10       0         10      100.00  
+Crosses   13       0         13      100.00  
+
+
+Variables for Group  bridge_pkg::bridge_coverage::transition_cg
+
+
+VARIABLE      EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_prev_dir   2        0         2       100.00  100  1      1        0                    
+cp_cur_dir    2        0         2       100.00  100  1      1        0                    
+cp_prev_slave 3        0         3       100.00  100  1      1        0                    
+cp_cur_slave  3        0         3       100.00  100  1      1        0                    
+
+
+Crosses for Group  bridge_pkg::bridge_coverage::transition_cg
+
+
+CROSS                EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_transition 4        0         4       100.00  100  1      1        0                     
+slave_transition     9        0         9       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prev_dir
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_prev_dir
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5738  1               
+read  6836  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cur_dir
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_cur_dir
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5725  1               
+read  6849  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prev_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_prev_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2645  1               
+gpio  4328  1               
+uart  5077  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cur_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_cur_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2656  1               
+gpio  4339  1               
+uart  5053  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_transition
+
+
+Samples crossed: cp_prev_dir cp_cur_dir
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_transition
+
+
+Bins
+
+cp_prev_dir cp_cur_dir COUNT AT LEAST STATUS 
+write       write      971   1               
+write       read       4767  1               
+read        write      4754  1               
+read        read       2082  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_transition
+
+
+Samples crossed: cp_prev_slave cp_cur_slave
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 9        0         9       100.00          
+
+
+Automatically Generated Cross Bins for slave_transition
+
+
+Bins
+
+cp_prev_slave cp_cur_slave COUNT AT LEAST STATUS 
+timer         timer        1365  1               
+timer         gpio         535   1               
+timer         uart         597   1               
+gpio          timer        538   1               
+gpio          gpio         1547  1               
+gpio          uart         2097  1               
+uart          timer        606   1               
+uart          gpio         2105  1               
+uart          uart         2213  1               
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : tb_top.me.obj.transition_cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                       
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::transition_cg 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   tb_top.me.obj.transition_cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 10       0         10      100.00  
+Crosses   13       0         13      100.00  
+
+
+Variables for Group Instance  tb_top.me.obj.transition_cg
+
+
+VARIABLE      EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_prev_dir   2        0         2       100.00  100  1      1        0                    
+cp_cur_dir    2        0         2       100.00  100  1      1        0                    
+cp_prev_slave 3        0         3       100.00  100  1      1        0                    
+cp_cur_slave  3        0         3       100.00  100  1      1        0                    
+
+
+Crosses for Group Instance  tb_top.me.obj.transition_cg
+
+
+CROSS                EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+direction_transition 4        0         4       100.00  100  1      1        0                     
+slave_transition     9        0         9       100.00  100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prev_dir
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_prev_dir
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5738  1               
+read  6836  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cur_dir
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_cur_dir
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+write 5725  1               
+read  6849  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_prev_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_prev_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2645  1               
+gpio  4328  1               
+uart  5077  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cur_slave
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_cur_slave
+
+
+Bins
+
+NAME  COUNT AT LEAST STATUS 
+timer 2656  1               
+gpio  4339  1               
+uart  5053  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross direction_transition
+
+
+Samples crossed: cp_prev_dir cp_cur_dir
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 4        0         4       100.00          
+
+
+Automatically Generated Cross Bins for direction_transition
+
+
+Bins
+
+cp_prev_dir cp_cur_dir COUNT AT LEAST STATUS 
+write       write      971   1               
+write       read       4767  1               
+read        write      4754  1               
+read        read       2082  1               
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross slave_transition
+
+
+Samples crossed: cp_prev_slave cp_cur_slave
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 9        0         9       100.00          
+
+
+Automatically Generated Cross Bins for slave_transition
+
+
+Bins
+
+cp_prev_slave cp_cur_slave COUNT AT LEAST STATUS 
+timer         timer        1365  1               
+timer         gpio         535   1               
+timer         uart         597   1               
+gpio          timer        538   1               
+gpio          gpio         1547  1               
+gpio          uart         2097  1               
+uart          timer        606   1               
+uart          gpio         2105  1               
+uart          uart         2213  1               
+
+

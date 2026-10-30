@@ -1,0 +1,57 @@
+Command: /home/pedu23/odai2/axi4lite_apb_bridge_uvm/./simv +UVM_TESTNAME=bridge_overlap_test +UVM_VERBOSITY=UVM_LOW +ntb_random_seed=17 -cm line+cond+fsm+tgl+branch -cm_dir coverage.vdb -cm_name bridge_overlap_test_17 -l sim_bridge_overlap_test_17.log
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP2_Full64; Runtime version W-2024.09-SP2_Full64;  Oct 19 09:38 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test bridge_overlap_test...
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP2/etc/uvm/base/uvm_objection.svh(1274) @ 43745000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/apb_coverage.sv(51) @ 43745000: uvm_test_top.env.apb.cov [APB_COVERAGE] received=372 sampled=372
+UVM_INFO tb/axi_coverage.sv(72) @ 43745000: uvm_test_top.env.axi.cov [AXI_COVERAGE] received=402 sampled=402 response_cg=72.9%
+UVM_INFO tb/bridge_coverage.sv(163) @ 43745000: uvm_test_top.env.cov [BRIDGE_COVERAGE] responses=402 outcome=100.0% transition=100.0% read_history=100.0% abort=0.0%
+UVM_INFO tb/bridge_scoreboard.sv(215) @ 43745000: uvm_test_top.env.scb [SCB_SUMMARY] AXI requests=402 APB checked=372 responses checked=402 rejected responses=30 reset-aborted=0
+UVM_INFO tb/bridge_test.sv(47) @ 43745000: uvm_test_top [BRIDGE_TEST_PASS] bridge_overlap_test completed with 402 checked responses
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    7
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[APB_COVERAGE]     1
+[AXI_COVERAGE]     1
+[BRIDGE_COVERAGE]     1
+[BRIDGE_TEST_PASS]     1
+[RNTST]     1
+[SCB_SUMMARY]     1
+[TEST_DONE]     1
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP2/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time             43745000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 43745000 ps
+CPU Time:      0.260 seconds;       Data structure size:   0.6Mb
+Mon Oct 19 09:38:22 2026

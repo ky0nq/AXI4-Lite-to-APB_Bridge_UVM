@@ -1,0 +1,14 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 83.11  98.21  86.40  57.94  75.00  98.00 
+
+
+Total modules in report: 3
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME             
+ 80.86  97.94  86.40  47.13  75.00  97.83 APB_v1_0_S00_AXI 
+ 92.43 100.00 --      77.30 --     100.00 APB_v1_0         
+--     --     --     --     --     --     tb_top(X)        
+

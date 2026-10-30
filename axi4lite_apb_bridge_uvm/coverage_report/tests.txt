@@ -1,0 +1,52 @@
+Tests
+
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
+ 85.19  98.21  86.40  72.73  75.00  98.00  80.80 
+
+
+Total tests in report: 41
+-------------------------------------------------------------------------------
+Data from the following tests was used to generate this report
+coverage/bridge_stress_test_1   
+coverage/bridge_overlap_test_1  
+coverage/bridge_stress_test_2   
+coverage/bridge_overlap_test_2  
+coverage/bridge_stress_test_3   
+coverage/bridge_overlap_test_3  
+coverage/bridge_stress_test_4   
+coverage/bridge_overlap_test_4  
+coverage/bridge_stress_test_5   
+coverage/bridge_overlap_test_5  
+coverage/bridge_stress_test_6   
+coverage/bridge_overlap_test_6  
+coverage/bridge_stress_test_7   
+coverage/bridge_overlap_test_7  
+coverage/bridge_stress_test_8   
+coverage/bridge_overlap_test_8  
+coverage/bridge_stress_test_9   
+coverage/bridge_overlap_test_9  
+coverage/bridge_stress_test_10  
+coverage/bridge_overlap_test_10 
+coverage/bridge_stress_test_11  
+coverage/bridge_overlap_test_11 
+coverage/bridge_stress_test_12  
+coverage/bridge_overlap_test_12 
+coverage/bridge_stress_test_13  
+coverage/bridge_overlap_test_13 
+coverage/bridge_stress_test_14  
+coverage/bridge_overlap_test_14 
+coverage/bridge_stress_test_15  
+coverage/bridge_overlap_test_15 
+coverage/bridge_stress_test_16  
+coverage/bridge_overlap_test_16 
+coverage/bridge_stress_test_17  
+coverage/bridge_overlap_test_17 
+coverage/bridge_stress_test_18  
+coverage/bridge_overlap_test_18 
+coverage/bridge_stress_test_19  
+coverage/bridge_overlap_test_19 
+coverage/bridge_stress_test_20  
+coverage/bridge_overlap_test_20 
+coverage/bridge_smoke_test_1    
+

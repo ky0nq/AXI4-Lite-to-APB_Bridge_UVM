@@ -1,0 +1,17 @@
+Testbench Group List
+
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+ 80.80  80.80     1      
+
+
+Total groups in report: 6
+-------------------------------------------------------------------------------
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                         
+  0.00   0.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::abort_cg        
+ 88.79  88.79    1      100    1        1            64           64                    bridge_pkg::axi_coverage::response_cg        
+ 96.00  96.00    1      100    1        1            64           64                    bridge_pkg::apb_coverage::transfer_cg        
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::read_history_cg 
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::outcome_cg      
+100.00 100.00    1      100    1        1            64           64                    bridge_pkg::bridge_coverage::transition_cg   
+

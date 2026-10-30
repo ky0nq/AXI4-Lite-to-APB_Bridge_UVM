@@ -1,0 +1,13 @@
+# VCS / Verdi build & database outputs
+axi4lite_apb_bridge_uvm/csrc/
+axi4lite_apb_bridge_uvm/simv
+axi4lite_apb_bridge_uvm/simv.daidir/
+axi4lite_apb_bridge_uvm/coverage.vdb/
+axi4lite_apb_bridge_uvm/vdCovLog/
+axi4lite_apb_bridge_uvm/ucli.key
+axi4lite_apb_bridge_uvm/vc_hdrs.h
+axi4lite_apb_bridge_uvm/.fsm.sch.verilog.xml
+*.vpd
+*.fsdb
+.DS_Store
+__MACOSX/

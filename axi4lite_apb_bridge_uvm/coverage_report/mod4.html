@@ -1,0 +1,4856 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: APB_v1_0_S00_AXI</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | <a href="groups.html" ><b>groups</b></a> | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_APB_v1_0_S00_AXI'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_APB_v1_0_S00_AXI')">APB_v1_0_S00_AXI</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 80.86</td>
+<td class="s9 cl rt"><a href="mod4.html#Line" > 97.94</a></td>
+<td class="s8 cl rt"><a href="mod4.html#Cond" > 86.40</a></td>
+<td class="s4 cl rt"><a href="mod4.html#Toggle" > 47.13</a></td>
+<td class="s7 cl rt"><a href="mod4.html#FSM" > 75.00</a></td>
+<td class="s9 cl rt"><a href="mod4.html#Branch" > 97.83</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/pedu23/odai2/axi4lite_apb_bridge_uvm/rtl/APB_v1_0_S00_AXI.v')">/home/pedu23/odai2/axi4lite_apb_bridge_uvm/rtl/APB_v1_0_S00_AXI.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_4"  onclick="showContent('inst_tag_4')">tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></td>
+<td class="s8 cl rt"> 85.23</td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_4_Line" > 97.94</a></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_4_Cond" > 86.40</a></td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_4_Toggle" > 68.99</a></td>
+<td class="s7 cl rt"><a href="mod4.html#inst_tag_4_FSM" > 75.00</a></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_4_Branch" > 97.83</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='inst_tag_4'>
+<hr>
+<a name="inst_tag_4"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 85.23</td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_4_Line" > 97.94</a></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_4_Cond" > 86.40</a></td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_4_Toggle" > 68.99</a></td>
+<td class="s7 cl rt"><a href="mod4.html#inst_tag_4_FSM" > 75.00</a></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_4_Branch" > 97.83</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 85.23</td>
+<td class="s9 cl rt"> 97.94</td>
+<td class="s8 cl rt"> 86.40</td>
+<td class="s6 cl rt"> 68.99</td>
+<td class="s7 cl rt"> 75.00</td>
+<td class="s9 cl rt"> 97.83</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 92.43</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"> 77.30</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod9.html#inst_tag_9" >dut</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_APB_v1_0_S00_AXI'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod4.html" >APB_v1_0_S00_AXI</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>97</td><td>95</td><td>97.94</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>193</td><td>10</td><td>10</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>221</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>238</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>321</td><td>11</td><td>11</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>355</td><td>7</td><td>7</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>381</td><td>11</td><td>11</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>442</td><td>9</td><td>9</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>463</td><td>12</td><td>12</td><td>100.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>484</td><td>28</td><td>26</td><td>92.86</td></tr>
+</table>
+<pre class="code"><br clear=all>
+192                     	begin
+193        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+194        1/1          	      axi_awready &lt;= 1'b0;
+195        1/1          	      aw_en &lt;= 1'b1;
+196                     	  end 
+197                     	  else begin    
+198        1/1          	      if (write_grant) begin
+199                     	          // slave is ready to accept write address when 
+200                     	          // there is a valid write address and write data
+201                     	          // on the write address and data bus. This design 
+202                     	          // expects no outstanding transactions. 
+203        1/1          	          axi_awready &lt;= 1'b1;
+204        1/1          	          aw_en &lt;= 1'b0;
+205                     	        end
+206        1/1          	        else if (S_AXI_BREADY &amp;&amp; axi_bvalid) begin
+207        1/1          	              aw_en &lt;= 1'b1;
+208        1/1          	              axi_awready &lt;= 1'b0;
+209                     	            end
+210                     	      else  begin
+211        1/1          	          axi_awready &lt;= 1'b0;
+212                     	      end
+213                     	    end 
+214                     	end       
+215                     
+216                     	// Implement axi_awaddr latching
+217                     	// This process is used to latch the address when both 
+218                     	// S_AXI_AWVALID and S_AXI_WVALID are valid. 
+219                     
+220                     	always @( posedge S_AXI_ACLK ) begin
+221        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+222        1/1          	      axi_awaddr &lt;= 0;
+223                     	    end 
+224                     	  else begin    
+225        1/1          	      if (write_grant) begin
+226                     	          // Write Address latching 
+227        1/1          	          axi_awaddr &lt;= S_AXI_AWADDR;
+228                     	        end
+                        MISSING_ELSE
+229                     	    end 
+230                     	end       
+231                     
+232                     	// Implement axi_wready generation
+233                     	// axi_wready is asserted for one S_AXI_ACLK clock cycle when both
+234                     	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_wready is 
+235                     	// de-asserted when reset is low. 
+236                     
+237                     	always @( posedge S_AXI_ACLK ) begin
+238        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+239        1/1          	      axi_wready &lt;= 1'b0;
+240                     	    end 
+241                     	  else begin    
+242        1/1          	      if (write_grant) begin
+243                     	          // slave is ready to accept write data when 
+244                     	          // there is a valid write address and write data
+245                     	          // on the write address and data bus. This design 
+246                     	          // expects no outstanding transactions. 
+247        1/1          	          axi_wready &lt;= 1'b1;
+248                     	      end
+249        1/1          	      else begin axi_wready &lt;= 1'b0; end
+250                     	    end 
+251                     	end       
+252                     
+253                     	// Implement memory mapped register select and write logic generation
+254                     	// The write data is accepted and written to memory mapped registers when
+255                     	// axi_awready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted. Write strobes are used to
+256                     	// select byte enables of slave registers while writing.
+257                     	// These registers are cleared when reset (active low) is applied.
+258                     	// Slave register write enable is asserted when valid address and data are available
+259                     	// and the slave is ready to accept the write address and write data.
+260                     	assign slv_reg_wren = axi_wready &amp;&amp; S_AXI_WVALID &amp;&amp; axi_awready &amp;&amp; S_AXI_AWVALID;
+261                     
+262                     	//always @( posedge S_AXI_ACLK )
+263                     	//begin
+264                     	//  if ( S_AXI_ARESETN == 1'b0 )
+265                     	//    begin
+266                     	//      slv_reg0 &lt;= 0;
+267                     	//      slv_reg1 &lt;= 0;
+268                     	//      slv_reg2 &lt;= 0;
+269                     	//      slv_reg3 &lt;= 0;
+270                     	//    end 
+271                     	//  else begin
+272                     	//    if (slv_reg_wren)
+273                     	//      begin
+274                     	//        case ( axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+275                     	//          2'h0:
+276                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+277                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+278                     	//                // Respective byte enables are asserted as per write strobes 
+279                     	//                // Slave register 0
+280                     	//                slv_reg0[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+281                     	//              end  
+282                     	//          2'h1:
+283                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+284                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+285                     	//                // Respective byte enables are asserted as per write strobes 
+286                     	//                // Slave register 1
+287                     	//                slv_reg1[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+288                     	//              end  
+289                     	//          2'h2:
+290                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+291                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+292                     	//                // Respective byte enables are asserted as per write strobes 
+293                     	//                // Slave register 2
+294                     	//                slv_reg2[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+295                     	//              end  
+296                     	//          2'h3:
+297                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+298                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+299                     	//                // Respective byte enables are asserted as per write strobes 
+300                     	//                // Slave register 3
+301                     	//                slv_reg3[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+302                     	//              end  
+303                     	//          default : begin
+304                     	//                      slv_reg0 &lt;= slv_reg0;
+305                     	//                      slv_reg1 &lt;= slv_reg1;
+306                     	//                      slv_reg2 &lt;= slv_reg2;
+307                     	//                      slv_reg3 &lt;= slv_reg3;
+308                     	//                    end
+309                     	//        endcase
+310                     	//      end
+311                     	//  end
+312                     	//end    
+313                     
+314                     	// Implement write response logic generation
+315                     	// The write response and response valid signals are asserted by the slave 
+316                     	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
+317                     	// This marks the acceptance of address and indicates the status of 
+318                     	// write transaction.
+319                     
+320                     	always @( posedge S_AXI_ACLK ) begin
+321        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+322        1/1          	      axi_bvalid  &lt;= 0;
+323        1/1          	      axi_bresp   &lt;= 2'b0;
+324                     	    end 
+325                     	  else begin    
+326                     	      //if (axi_awready &amp;&amp; S_AXI_AWVALID &amp;&amp; ~axi_bvalid &amp;&amp; axi_wready &amp;&amp; S_AXI_WVALID)
+327        1/1          	      if (slv_reg_wren &amp;&amp; write_reject &amp;&amp; (PSTATE == 2'b00)) begin
+328        1/1                        axi_bvalid &lt;= 1'b1;
+329        1/1                        axi_bresp &lt;= 2'b10;
+330                               end
+331        1/1                    else if (PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10)) begin
+332                     	          // indicates a valid write response is available
+333        1/1          	          axi_bvalid &lt;= 1'b1;
+334                     	          //axi_bresp  &lt;= 2'b0; // 'OKAY' response 
+335        1/1          	          axi_bresp  &lt;= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+336                     	        end                   // work error responses in future
+337                     	      else begin
+338        1/1          	          if (S_AXI_BREADY &amp;&amp; axi_bvalid) begin
+339                     	            //check if bready is asserted while bvalid is high) 
+340                     	            //(there is a possibility that bready is always asserted high)   
+341        1/1          	              axi_bvalid &lt;= 1'b0; 
+342                     	          end  
+                        MISSING_ELSE
+343                     	        end
+344                     	    end
+345                     	end   
+346                     
+347                     	// Implement axi_arready generation
+348                     	// axi_arready is asserted for one S_AXI_ACLK clock cycle when
+349                     	// S_AXI_ARVALID is asserted. axi_awready is 
+350                     	// de-asserted when reset (active low) is asserted. 
+351                     	// The read address is also latched when S_AXI_ARVALID is 
+352                     	// asserted. axi_araddr is reset to zero on reset assertion.
+353                     
+354                     	always @( posedge S_AXI_ACLK ) begin
+355        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+356        1/1          	      axi_arready &lt;= 1'b0;
+357        1/1          	      axi_araddr  &lt;= 32'b0;
+358                     	  end 
+359                     	  else begin    
+360        1/1          	      if (read_grant) begin
+361                     	          // indicates that the slave has acceped the valid read address
+362        1/1          	          axi_arready &lt;= 1'b1;
+363                     	          // Read address latching
+364        1/1          	          axi_araddr  &lt;= S_AXI_ARADDR;
+365                     	        end
+366                     	      else begin
+367        1/1          	          axi_arready &lt;= 1'b0;
+368                     	      end
+369                     	    end 
+370                     	end       
+371                     
+372                     	// Implement axi_arvalid generation
+373                     	// axi_rvalid is asserted for one S_AXI_ACLK clock cycle when both 
+374                     	// S_AXI_ARVALID and axi_arready are asserted. The slave registers 
+375                     	// data are available on the axi_rdata bus at this instance. The 
+376                     	// assertion of axi_rvalid marks the validity of read data on the 
+377                     	// bus and axi_rresp indicates the status of read transaction.axi_rvalid 
+378                     	// is deasserted on reset (active low). axi_rresp and axi_rdata are 
+379                     	// cleared to zero on reset (active low).  
+380                     	always @( posedge S_AXI_ACLK ) begin
+381        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+382        1/1          	      axi_rvalid &lt;= 0;
+383        1/1          	      axi_rresp  &lt;= 0;
+384                     	  end 
+385                     	  else begin    
+386                     	      //if (axi_arready &amp;&amp; S_AXI_ARVALID &amp;&amp; ~axi_rvalid)
+387        1/1          	      if (slv_reg_rden &amp;&amp; read_reject &amp;&amp; (PSTATE == 2'b00)) begin
+388        1/1                        axi_rvalid &lt;= 1'b1;
+389        1/1                        axi_rresp &lt;= 2'b10;
+390                               end
+391        1/1                    else if (!PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10)) begin
+392                     	          // Valid read data is available at the read data bus
+393        1/1          	          axi_rvalid &lt;= 1'b1;
+394                     	          //axi_rresp  &lt;= 2'b0; // 'OKAY' response
+395        1/1          	          axi_rresp  &lt;= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+396                     	      end   
+397        1/1          	      else if (axi_rvalid &amp;&amp; S_AXI_RREADY) begin
+398                     	          // Read data is accepted by the master
+399        1/1          	          axi_rvalid &lt;= 1'b0;
+400                     	      end                
+                        MISSING_ELSE
+401                     	    end
+402                     	end    
+403                     
+404                     	// Implement memory mapped register select and read logic generation
+405                     	// Slave register read enable is asserted when valid address is available
+406                     	// and the slave is ready to accept the read address.
+407                     	assign slv_reg_rden = axi_arready &amp; S_AXI_ARVALID &amp; ~axi_rvalid;
+408                     	//always @(*)
+409                     	//begin
+410                     	//      // Address decoding for reading registers
+411                     	//      case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+412                     	//        2'h0   : reg_data_out &lt;= slv_reg0;
+413                     	//        2'h1   : reg_data_out &lt;= slv_reg1;
+414                     	//        2'h2   : reg_data_out &lt;= slv_reg2;
+415                     	//        2'h3   : reg_data_out &lt;= slv_reg3;
+416                     	//        default : reg_data_out &lt;= 0;
+417                     	//      endcase
+418                     	//end
+419                     
+420                     	// Output register or memory read data
+421                     	//always @( posedge S_AXI_ACLK )
+422                     	//begin
+423                     	//  if ( S_AXI_ARESETN == 1'b0 )
+424                     	//    begin
+425                     	//      axi_rdata  &lt;= 0;
+426                     	//    end 
+427                     	//  else
+428                     	//    begin    
+429                     	//      // When there is a valid read address (S_AXI_ARVALID) with 
+430                     	//      // acceptance of read address by the slave (axi_arready), 
+431                     	//      // output the read dada 
+432                     	//      if (slv_reg_rden)
+433                     	//        begin
+434                     	//          axi_rdata &lt;= reg_data_out;     // register read data
+435                     	//        end   
+436                     	//    end
+437                     	//end    
+438                     
+439                     	// Add user logic here
+440                     
+441                     	always @( posedge S_AXI_ACLK ) begin
+442        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+443        1/1                      PADDR &lt;= 0;
+444        1/1                      apb_prot &lt;= 0;
+445                             end
+446                     	    else begin    
+447        1/1          	        if (slv_reg_rden &amp;&amp; (PSTATE == 2'b00)) begin
+448        1/1                          PADDR &lt;= S_AXI_ARADDR;
+449        1/1                          apb_prot &lt;= S_AXI_ARPROT;
+450                                 end
+451        1/1                      else if (slv_reg_wren &amp;&amp; (PSTATE == 2'b00)) begin
+452        1/1                          PADDR &lt;= S_AXI_AWADDR;
+453        1/1                          apb_prot &lt;= S_AXI_AWPROT;
+454                                 end
+                        MISSING_ELSE
+455                     	    end    
+456                     	end    
+457                     	
+458                         // ==== FIX (1/2): on write, select the upper/lower 16-bit byte lane using address[1] ====
+459                         // Previously it always looked only at S_AXI_WDATA[15:0]/WSTRB[1:0], but for
+460                         // non-word-aligned registers such as offset 2/6, the AXI spec puts the actual data on [31:16]/WSTRB[3:2],
+461                         // so the correct lane must be selected based on S_AXI_AWADDR[1].
+462                         always @( posedge S_AXI_ACLK ) begin
+463        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+464        1/1                      PWDATA &lt;= 0;
+465        1/1                      PSTRB &lt;= 0;
+466                             end
+467                             else begin
+468        1/1                      if (slv_reg_rden &amp;&amp; (PSTATE == 2'b00)) begin
+469        1/1                          PWDATA &lt;= 0;
+470        1/1                          PSTRB &lt;= 0;
+471                                 end
+472        1/1                      else if (slv_reg_wren &amp;&amp; (PSTATE == 2'b00)) begin
+473        1/1                          if (S_AXI_AWADDR[1]) begin
+474        1/1                              PWDATA &lt;= S_AXI_WDATA[31:16];
+475        1/1                              PSTRB  &lt;= S_AXI_WSTRB[3:2];
+476                                     end else begin
+477        1/1                              PWDATA &lt;= S_AXI_WDATA[15:0];
+478        1/1                              PSTRB  &lt;= S_AXI_WSTRB[1:0];
+479                                     end
+480                                 end
+                        MISSING_ELSE
+481                             end
+482                         end
+483                         always @( posedge S_AXI_ACLK ) begin
+484        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+485        1/1                      PSTATE &lt;= 0;
+486        1/1                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+487        1/1                      axi_rdata &lt;= 0;
+488                             end
+489                             else begin
+490        1/1                      case (PSTATE)
+491                                     2'b00 : begin
+492        1/1                              if (slv_reg_rden) begin
+493        1/1                                  if (read_reject) begin
+494        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+495        1/1                                      axi_rdata &lt;= 0;
+496                                             end else begin
+497        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b100;
+498        1/1                                      PSTATE &lt;= 2'b01;
+499                                             end
+500                                         end
+501        1/1                              else if (slv_reg_wren) begin
+502        1/1                                  if (write_reject) begin
+503        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+504                                             end else begin
+505        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b101;
+506        1/1                                      PSTATE &lt;= 2'b01;
+507                                             end
+508                                         end
+509        1/1                              else {PSEL,PENABLE,PWRITE} &lt;= {3'b000};
+510                                     end
+511                                     2'b01 : begin
+512        1/1                                  {PSEL,PENABLE,PWRITE} &lt;= {2'b11,PWRITE};
+513        1/1                                  PSTATE &lt;= 2'b10;
+514                                     end
+515                                     2'b10 : begin
+516        1/1                              if(PREADY == 1'b1)begin
+517        1/1                                  {PSEL,PENABLE,PWRITE} &lt;= {2'b00,PWRITE};
+518        1/1                                  PSTATE &lt;= 2'b00;
+519                                             // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                             // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                             // PADDR is already latched with the read address at this point, so it can be used as is.
+522        1/1                                  if(!PWRITE) begin
+523        1/1                                      if (PADDR[1])
+524        1/1                                          axi_rdata &lt;= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} &lt;&lt; 16;
+525                                                 else
+526        1/1                                          axi_rdata &lt;= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+527                                             end
+                        MISSING_ELSE
+528                                         end
+                        MISSING_ELSE
+529                                     end
+530                                     default : begin
+531        <font color = "red">0/1     ==>                          {PSEL,PENABLE,PWRITE} &lt;= {3'b000};</font>
+532        <font color = "red">0/1     ==>                          PSTATE &lt;= 2'b00;</font>
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod4.html" >APB_v1_0_S00_AXI</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">Conditions</td><td>125</td><td>108</td><td>86.40</td></tr>
+<tr class="s8"><td class="lf">Logical</td><td>125</td><td>108</td><td>86.40</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       116
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == UART))
+             --1-   -----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       116
+ SUB-EXPRESSION (PADDR[14:12] == UART)
+                -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       117
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == GPIO))
+             --1-   -----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       117
+ SUB-EXPRESSION (PADDR[14:12] == GPIO)
+                -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       118
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == TIMER))
+             --1-   -----------2-----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       118
+ SUB-EXPRESSION (PADDR[14:12] == TIMER)
+                -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       162
+ EXPRESSION (PSTATE != 2'b0)
+            --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       165
+ EXPRESSION (((!axi_awready)) &amp;&amp; S_AXI_AWVALID &amp;&amp; S_AXI_WVALID &amp;&amp; aw_en &amp;&amp; ((!apb_busy)) &amp;&amp; ((!S_AXI_ARVALID)) &amp;&amp; ((!axi_arready)) &amp;&amp; ((!axi_rvalid)))
+             --------1-------    ------2------    ------3-----    --4--    ------5------    ---------6--------    --------7-------    -------8-------
+</pre>
+<table class="noborder">
+<col span="8" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>-5-</th><th>-6-</th><th>-7-</th><th>-8-</th><th>Status</th>                      </tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       168
+ EXPRESSION (((!axi_arready)) &amp;&amp; S_AXI_ARVALID &amp;&amp; ((!axi_rvalid)) &amp;&amp; ((!apb_busy)) &amp;&amp; aw_en &amp;&amp; ((!axi_awready)) &amp;&amp; ((!axi_wready)))
+             --------1-------    ------2------    -------3-------    ------4------    --5--    --------6-------    -------7-------
+</pre>
+<table class="noborder">
+<col span="7" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>-5-</th><th>-6-</th><th>-7-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       171
+ EXPRESSION (S_AXI_AWADDR[0] || (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2]))))
+             -------1-------    --------------------------------2--------------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       171
+ SUB-EXPRESSION (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2])))
+                 -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       193
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       206
+ EXPRESSION (S_AXI_BREADY &amp;&amp; axi_bvalid)
+             ------1-----    -----2----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       221
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       238
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       260
+ EXPRESSION (axi_wready &amp;&amp; S_AXI_WVALID &amp;&amp; axi_awready &amp;&amp; S_AXI_AWVALID)
+             -----1----    ------2-----    -----3-----    ------4------
+</pre>
+<table class="noborder">
+<col span="4" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>Status</th>                      </tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       321
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       327
+ EXPRESSION (slv_reg_wren &amp;&amp; write_reject &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    ------2-----    --------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       327
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       331
+ EXPRESSION (PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10))
+             ---1--    ---2--    --------3--------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       331
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       335
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       338
+ EXPRESSION (S_AXI_BREADY &amp;&amp; axi_bvalid)
+             ------1-----    -----2----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       355
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       381
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       387
+ EXPRESSION (slv_reg_rden &amp;&amp; read_reject &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    -----2-----    --------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       387
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       391
+ EXPRESSION (((!PWRITE)) &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10))
+             -----1-----    ---2--    --------3--------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       391
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       395
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       397
+ EXPRESSION (axi_rvalid &amp;&amp; S_AXI_RREADY)
+             -----1----    ------2-----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       407
+ EXPRESSION (axi_arready &amp; S_AXI_ARVALID &amp; ((~axi_rvalid)))
+             -----1-----   ------2------   -------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       442
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       447
+ EXPRESSION (slv_reg_rden &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       447
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       451
+ EXPRESSION (slv_reg_wren &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       451
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       463
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       468
+ EXPRESSION (slv_reg_rden &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       468
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       472
+ EXPRESSION (slv_reg_wren &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       472
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       484
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       516
+ EXPRESSION (PREADY == 1'b1)
+            --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod4.html" >APB_v1_0_S00_AXI</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Totals</td>
+<td class="rt">59</td>
+<td class="rt">48</td>
+<td class="rt">81.36 </td>
+</tr><tr class="s4">
+<td>Total Bits</td>
+<td class="rt">1010</td>
+<td class="rt">476</td>
+<td class="rt">47.13 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">505</td>
+<td class="rt">240</td>
+<td class="rt">47.52 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">505</td>
+<td class="rt">236</td>
+<td class="rt">46.73 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Ports</td>
+<td class="rt">33</td>
+<td class="rt">29</td>
+<td class="rt">87.88 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">456</td>
+<td class="rt">328</td>
+<td class="rt">71.93 </td>
+</tr><tr class="s7">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">228</td>
+<td class="rt">165</td>
+<td class="rt">72.37 </td>
+</tr><tr class="s7">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">228</td>
+<td class="rt">163</td>
+<td class="rt">71.49 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s7">
+<td>Signals</td>
+<td class="rt">26</td>
+<td class="rt">19</td>
+<td class="rt">73.08 </td>
+</tr><tr class="s2">
+<td>Signal Bits</td>
+<td class="rt">554</td>
+<td class="rt">148</td>
+<td class="rt">26.71 </td>
+</tr><tr class="s2">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">277</td>
+<td class="rt">75</td>
+<td class="rt">27.08 </td>
+</tr><tr class="s2">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">277</td>
+<td class="rt">73</td>
+<td class="rt">26.35 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>S_AXI_ACLK</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARESETN</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[30]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_WDATA[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WSTRB[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BRESP[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BRESP[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[30]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RDATA[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RRESP[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RRESP[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_UART</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_GPIO</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_TIMER</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PENABLE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PWRITE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PWDATA[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSTRB[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PRDATA[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PSLVERR</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>PSEL</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_awaddr[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_awaddr[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_awaddr[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_awaddr[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_awaddr[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_awaddr[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_awaddr[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_awaddr[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_awready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_wready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_bresp[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+</tr><tr>
+<td>axi_bresp[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_bvalid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_araddr[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_araddr[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_araddr[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_araddr[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_araddr[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_araddr[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_araddr[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_araddr[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>axi_arready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_rdata[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_rresp[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+</tr><tr>
+<td>axi_rresp[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>axi_rvalid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>slv_reg0[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>slv_reg1[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>slv_reg2[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>slv_reg3[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>slv_reg_rden</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>slv_reg_wren</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reg_data_out[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>aw_en</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>PSTATE[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>apb_prot[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>apb_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_grant</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_grant</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>write_reject</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>read_reject</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod4.html" >APB_v1_0_S00_AXI</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: PSTATE</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s7">
+<td>Transitions</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: PSTATE</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>'h0</td>
+<td class="rt">485</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h1</td>
+<td class="rt">498</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h2</td>
+<td class="rt">513</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>'h0->'h1</td>
+<td class="rt">498</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>'h1->'h0</td>
+<td class="rt">485</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h1->'h2</td>
+<td class="rt">513</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h2->'h0</td>
+<td class="rt">485</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod4.html" >APB_v1_0_S00_AXI</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">46</td>
+<td class="rt">45</td>
+<td class="rt">97.83 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">193</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">221</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">238</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">321</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">355</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">381</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">442</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">463</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">484</td>
+<td class="rt">12</td>
+<td class="rt">11</td>
+<td class="rt">91.67 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+193        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+194        	      axi_awready <= 1'b0;
+           <font color = "green">	      ==></font>
+195        	      aw_en <= 1'b1;
+196        	  end 
+197        	  else begin    
+198        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+199        	          // slave is ready to accept write address when 
+200        	          // there is a valid write address and write data
+201        	          // on the write address and data bus. This design 
+202        	          // expects no outstanding transactions. 
+203        	          axi_awready <= 1'b1;
+           <font color = "green">	          ==></font>
+204        	          aw_en <= 1'b0;
+205        	        end
+206        	        else if (S_AXI_BREADY && axi_bvalid) begin
+           	             <font color = "green">-3-</font>  
+207        	              aw_en <= 1'b1;
+           <font color = "green">	              ==></font>
+208        	              axi_awready <= 1'b0;
+209        	            end
+210        	      else  begin
+211        	          axi_awready <= 1'b0;
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+221        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+222        	      axi_awaddr <= 0;
+           <font color = "green">	      ==></font>
+223        	    end 
+224        	  else begin    
+225        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+226        	          // Write Address latching 
+227        	          axi_awaddr <= S_AXI_AWADDR;
+           <font color = "green">	          ==></font>
+228        	        end
+           	        MISSING_ELSE
+           <font color = "green">	        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+238        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+239        	      axi_wready <= 1'b0;
+           <font color = "green">	      ==></font>
+240        	    end 
+241        	  else begin    
+242        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+243        	          // slave is ready to accept write data when 
+244        	          // there is a valid write address and write data
+245        	          // on the write address and data bus. This design 
+246        	          // expects no outstanding transactions. 
+247        	          axi_wready <= 1'b1;
+           <font color = "green">	          ==></font>
+248        	      end
+249        	      else begin axi_wready <= 1'b0; end
+           <font color = "green">	      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+321        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+322        	      axi_bvalid  <= 0;
+           <font color = "green">	      ==></font>
+323        	      axi_bresp   <= 2'b0;
+324        	    end 
+325        	  else begin    
+326        	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+           	      <font color = "green">-2-</font>  
+328                      axi_bvalid <= 1'b1;
+           <font color = "green">              ==></font>
+329                      axi_bresp <= 2'b10;
+330                  end
+331                  else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          <font color = "green">-3-</font>  
+332        	          // indicates a valid write response is available
+333        	          axi_bvalid <= 1'b1;
+334        	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+           	                                <font color = "green">-4-</font>  
+           	                                <font color = "green">==></font>  
+           	                                <font color = "green">==></font>  
+336        	        end                   // work error responses in future
+337        	      else begin
+338        	          if (S_AXI_BREADY && axi_bvalid) begin
+           	          <font color = "green">-5-</font>  
+339        	            //check if bready is asserted while bvalid is high) 
+340        	            //(there is a possibility that bready is always asserted high)   
+341        	              axi_bvalid <= 1'b0; 
+           <font color = "green">	              ==></font>
+342        	          end  
+           	          MISSING_ELSE
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+355        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+356        	      axi_arready <= 1'b0;
+           <font color = "green">	      ==></font>
+357        	      axi_araddr  <= 32'b0;
+358        	  end 
+359        	  else begin    
+360        	      if (read_grant) begin
+           	      <font color = "green">-2-</font>  
+361        	          // indicates that the slave has acceped the valid read address
+362        	          axi_arready <= 1'b1;
+           <font color = "green">	          ==></font>
+363        	          // Read address latching
+364        	          axi_araddr  <= S_AXI_ARADDR;
+365        	        end
+366        	      else begin
+367        	          axi_arready <= 1'b0;
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+381        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+382        	      axi_rvalid <= 0;
+           <font color = "green">	      ==></font>
+383        	      axi_rresp  <= 0;
+384        	  end 
+385        	  else begin    
+386        	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+           	      <font color = "green">-2-</font>  
+388                      axi_rvalid <= 1'b1;
+           <font color = "green">              ==></font>
+389                      axi_rresp <= 2'b10;
+390                  end
+391                  else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          <font color = "green">-3-</font>  
+392        	          // Valid read data is available at the read data bus
+393        	          axi_rvalid <= 1'b1;
+394        	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+           	                                <font color = "green">-4-</font>  
+           	                                <font color = "green">==></font>  
+           	                                <font color = "green">==></font>  
+396        	      end   
+397        	      else if (axi_rvalid && S_AXI_RREADY) begin
+           	           <font color = "green">-5-</font>  
+398        	          // Read data is accepted by the master
+399        	          axi_rvalid <= 1'b0;
+           <font color = "green">	          ==></font>
+400        	      end                
+           	      MISSING_ELSE
+           <font color = "green">	      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+442                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+443                    PADDR <= 0;
+           <font color = "green">            ==></font>
+444                    apb_prot <= 0;
+445                end
+446        	    else begin    
+447        	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+           	        <font color = "green">-2-</font>  
+448                        PADDR <= S_AXI_ARADDR;
+           <font color = "green">                ==></font>
+449                        apb_prot <= S_AXI_ARPROT;
+450                    end
+451                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            <font color = "green">-3-</font>  
+452                        PADDR <= S_AXI_AWADDR;
+           <font color = "green">                ==></font>
+453                        apb_prot <= S_AXI_AWPROT;
+454                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+463                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+464                    PWDATA <= 0;
+           <font color = "green">            ==></font>
+465                    PSTRB <= 0;
+466                end
+467                else begin
+468                    if (slv_reg_rden && (PSTATE == 2'b00)) begin
+                       <font color = "green">-2-</font>  
+469                        PWDATA <= 0;
+           <font color = "green">                ==></font>
+470                        PSTRB <= 0;
+471                    end
+472                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            <font color = "green">-3-</font>  
+473                        if (S_AXI_AWADDR[1]) begin
+                           <font color = "green">-4-</font>  
+474                            PWDATA <= S_AXI_WDATA[31:16];
+           <font color = "green">                    ==></font>
+475                            PSTRB  <= S_AXI_WSTRB[3:2];
+476                        end else begin
+477                            PWDATA <= S_AXI_WDATA[15:0];
+           <font color = "green">                    ==></font>
+478                            PSTRB  <= S_AXI_WSTRB[1:0];
+479                        end
+480                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+484                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+485                    PSTATE <= 0;
+           <font color = "green">            ==></font>
+486                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+487                    axi_rdata <= 0;
+488                end
+489                else begin
+490                    case (PSTATE)
+                       <font color = "red">-2-</font>  
+491                        2'b00 : begin
+492                            if (slv_reg_rden) begin
+                               <font color = "green">-3-</font>  
+493                                if (read_reject) begin
+                                   <font color = "green">-4-</font>  
+494                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+           <font color = "green">                            ==></font>
+495                                    axi_rdata <= 0;
+496                                end else begin
+497                                    {PSEL,PENABLE,PWRITE} <= 3'b100;
+           <font color = "green">                            ==></font>
+498                                    PSTATE <= 2'b01;
+499                                end
+500                            end
+501                            else if (slv_reg_wren) begin
+                                    <font color = "green">-5-</font>  
+502                                if (write_reject) begin
+                                   <font color = "green">-6-</font>  
+503                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+           <font color = "green">                            ==></font>
+504                                end else begin
+505                                    {PSEL,PENABLE,PWRITE} <= 3'b101;
+           <font color = "green">                            ==></font>
+506                                    PSTATE <= 2'b01;
+507                                end
+508                            end
+509                            else {PSEL,PENABLE,PWRITE} <= {3'b000};
+           <font color = "green">                    ==></font>
+510                        end
+511                        2'b01 : begin
+512                                {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+           <font color = "green">                        ==></font>
+513                                PSTATE <= 2'b10;
+514                        end
+515                        2'b10 : begin
+516                            if(PREADY == 1'b1)begin
+                               <font color = "green">-7-</font>  
+517                                {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518                                PSTATE <= 2'b00;
+519                                // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                // PADDR is already latched with the read address at this point, so it can be used as is.
+522                                if(!PWRITE) begin
+                                   <font color = "green">-8-</font>  
+523                                    if (PADDR[1])
+                                       <font color = "green">-9-</font>  
+524                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+           <font color = "green">                                ==></font>
+525                                    else
+526                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+           <font color = "green">                                ==></font>
+527                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+528                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+529                        end
+530                        default : begin
+531                                {PSEL,PENABLE,PWRITE} <= {3'b000};
+           <font color = "red">                        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b01 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_4'>
+<a name="inst_tag_4_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>97</td><td>95</td><td>97.94</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>193</td><td>10</td><td>10</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>221</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>238</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>321</td><td>11</td><td>11</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>355</td><td>7</td><td>7</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>381</td><td>11</td><td>11</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>442</td><td>9</td><td>9</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>463</td><td>12</td><td>12</td><td>100.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>484</td><td>28</td><td>26</td><td>92.86</td></tr>
+</table>
+<pre class="code"><br clear=all>
+192                     	begin
+193        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+194        1/1          	      axi_awready &lt;= 1'b0;
+195        1/1          	      aw_en &lt;= 1'b1;
+196                     	  end 
+197                     	  else begin    
+198        1/1          	      if (write_grant) begin
+199                     	          // slave is ready to accept write address when 
+200                     	          // there is a valid write address and write data
+201                     	          // on the write address and data bus. This design 
+202                     	          // expects no outstanding transactions. 
+203        1/1          	          axi_awready &lt;= 1'b1;
+204        1/1          	          aw_en &lt;= 1'b0;
+205                     	        end
+206        1/1          	        else if (S_AXI_BREADY &amp;&amp; axi_bvalid) begin
+207        1/1          	              aw_en &lt;= 1'b1;
+208        1/1          	              axi_awready &lt;= 1'b0;
+209                     	            end
+210                     	      else  begin
+211        1/1          	          axi_awready &lt;= 1'b0;
+212                     	      end
+213                     	    end 
+214                     	end       
+215                     
+216                     	// Implement axi_awaddr latching
+217                     	// This process is used to latch the address when both 
+218                     	// S_AXI_AWVALID and S_AXI_WVALID are valid. 
+219                     
+220                     	always @( posedge S_AXI_ACLK ) begin
+221        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+222        1/1          	      axi_awaddr &lt;= 0;
+223                     	    end 
+224                     	  else begin    
+225        1/1          	      if (write_grant) begin
+226                     	          // Write Address latching 
+227        1/1          	          axi_awaddr &lt;= S_AXI_AWADDR;
+228                     	        end
+                        MISSING_ELSE
+229                     	    end 
+230                     	end       
+231                     
+232                     	// Implement axi_wready generation
+233                     	// axi_wready is asserted for one S_AXI_ACLK clock cycle when both
+234                     	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_wready is 
+235                     	// de-asserted when reset is low. 
+236                     
+237                     	always @( posedge S_AXI_ACLK ) begin
+238        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+239        1/1          	      axi_wready &lt;= 1'b0;
+240                     	    end 
+241                     	  else begin    
+242        1/1          	      if (write_grant) begin
+243                     	          // slave is ready to accept write data when 
+244                     	          // there is a valid write address and write data
+245                     	          // on the write address and data bus. This design 
+246                     	          // expects no outstanding transactions. 
+247        1/1          	          axi_wready &lt;= 1'b1;
+248                     	      end
+249        1/1          	      else begin axi_wready &lt;= 1'b0; end
+250                     	    end 
+251                     	end       
+252                     
+253                     	// Implement memory mapped register select and write logic generation
+254                     	// The write data is accepted and written to memory mapped registers when
+255                     	// axi_awready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted. Write strobes are used to
+256                     	// select byte enables of slave registers while writing.
+257                     	// These registers are cleared when reset (active low) is applied.
+258                     	// Slave register write enable is asserted when valid address and data are available
+259                     	// and the slave is ready to accept the write address and write data.
+260                     	assign slv_reg_wren = axi_wready &amp;&amp; S_AXI_WVALID &amp;&amp; axi_awready &amp;&amp; S_AXI_AWVALID;
+261                     
+262                     	//always @( posedge S_AXI_ACLK )
+263                     	//begin
+264                     	//  if ( S_AXI_ARESETN == 1'b0 )
+265                     	//    begin
+266                     	//      slv_reg0 &lt;= 0;
+267                     	//      slv_reg1 &lt;= 0;
+268                     	//      slv_reg2 &lt;= 0;
+269                     	//      slv_reg3 &lt;= 0;
+270                     	//    end 
+271                     	//  else begin
+272                     	//    if (slv_reg_wren)
+273                     	//      begin
+274                     	//        case ( axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+275                     	//          2'h0:
+276                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+277                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+278                     	//                // Respective byte enables are asserted as per write strobes 
+279                     	//                // Slave register 0
+280                     	//                slv_reg0[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+281                     	//              end  
+282                     	//          2'h1:
+283                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+284                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+285                     	//                // Respective byte enables are asserted as per write strobes 
+286                     	//                // Slave register 1
+287                     	//                slv_reg1[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+288                     	//              end  
+289                     	//          2'h2:
+290                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+291                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+292                     	//                // Respective byte enables are asserted as per write strobes 
+293                     	//                // Slave register 2
+294                     	//                slv_reg2[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+295                     	//              end  
+296                     	//          2'h3:
+297                     	//            for ( byte_index = 0; byte_index &lt;= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
+298                     	//              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
+299                     	//                // Respective byte enables are asserted as per write strobes 
+300                     	//                // Slave register 3
+301                     	//                slv_reg3[(byte_index*8) +: 8] &lt;= S_AXI_WDATA[(byte_index*8) +: 8];
+302                     	//              end  
+303                     	//          default : begin
+304                     	//                      slv_reg0 &lt;= slv_reg0;
+305                     	//                      slv_reg1 &lt;= slv_reg1;
+306                     	//                      slv_reg2 &lt;= slv_reg2;
+307                     	//                      slv_reg3 &lt;= slv_reg3;
+308                     	//                    end
+309                     	//        endcase
+310                     	//      end
+311                     	//  end
+312                     	//end    
+313                     
+314                     	// Implement write response logic generation
+315                     	// The write response and response valid signals are asserted by the slave 
+316                     	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
+317                     	// This marks the acceptance of address and indicates the status of 
+318                     	// write transaction.
+319                     
+320                     	always @( posedge S_AXI_ACLK ) begin
+321        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+322        1/1          	      axi_bvalid  &lt;= 0;
+323        1/1          	      axi_bresp   &lt;= 2'b0;
+324                     	    end 
+325                     	  else begin    
+326                     	      //if (axi_awready &amp;&amp; S_AXI_AWVALID &amp;&amp; ~axi_bvalid &amp;&amp; axi_wready &amp;&amp; S_AXI_WVALID)
+327        1/1          	      if (slv_reg_wren &amp;&amp; write_reject &amp;&amp; (PSTATE == 2'b00)) begin
+328        1/1                        axi_bvalid &lt;= 1'b1;
+329        1/1                        axi_bresp &lt;= 2'b10;
+330                               end
+331        1/1                    else if (PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10)) begin
+332                     	          // indicates a valid write response is available
+333        1/1          	          axi_bvalid &lt;= 1'b1;
+334                     	          //axi_bresp  &lt;= 2'b0; // 'OKAY' response 
+335        1/1          	          axi_bresp  &lt;= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+336                     	        end                   // work error responses in future
+337                     	      else begin
+338        1/1          	          if (S_AXI_BREADY &amp;&amp; axi_bvalid) begin
+339                     	            //check if bready is asserted while bvalid is high) 
+340                     	            //(there is a possibility that bready is always asserted high)   
+341        1/1          	              axi_bvalid &lt;= 1'b0; 
+342                     	          end  
+                        MISSING_ELSE
+343                     	        end
+344                     	    end
+345                     	end   
+346                     
+347                     	// Implement axi_arready generation
+348                     	// axi_arready is asserted for one S_AXI_ACLK clock cycle when
+349                     	// S_AXI_ARVALID is asserted. axi_awready is 
+350                     	// de-asserted when reset (active low) is asserted. 
+351                     	// The read address is also latched when S_AXI_ARVALID is 
+352                     	// asserted. axi_araddr is reset to zero on reset assertion.
+353                     
+354                     	always @( posedge S_AXI_ACLK ) begin
+355        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+356        1/1          	      axi_arready &lt;= 1'b0;
+357        1/1          	      axi_araddr  &lt;= 32'b0;
+358                     	  end 
+359                     	  else begin    
+360        1/1          	      if (read_grant) begin
+361                     	          // indicates that the slave has acceped the valid read address
+362        1/1          	          axi_arready &lt;= 1'b1;
+363                     	          // Read address latching
+364        1/1          	          axi_araddr  &lt;= S_AXI_ARADDR;
+365                     	        end
+366                     	      else begin
+367        1/1          	          axi_arready &lt;= 1'b0;
+368                     	      end
+369                     	    end 
+370                     	end       
+371                     
+372                     	// Implement axi_arvalid generation
+373                     	// axi_rvalid is asserted for one S_AXI_ACLK clock cycle when both 
+374                     	// S_AXI_ARVALID and axi_arready are asserted. The slave registers 
+375                     	// data are available on the axi_rdata bus at this instance. The 
+376                     	// assertion of axi_rvalid marks the validity of read data on the 
+377                     	// bus and axi_rresp indicates the status of read transaction.axi_rvalid 
+378                     	// is deasserted on reset (active low). axi_rresp and axi_rdata are 
+379                     	// cleared to zero on reset (active low).  
+380                     	always @( posedge S_AXI_ACLK ) begin
+381        1/1          	  if ( S_AXI_ARESETN == 1'b0 ) begin
+382        1/1          	      axi_rvalid &lt;= 0;
+383        1/1          	      axi_rresp  &lt;= 0;
+384                     	  end 
+385                     	  else begin    
+386                     	      //if (axi_arready &amp;&amp; S_AXI_ARVALID &amp;&amp; ~axi_rvalid)
+387        1/1          	      if (slv_reg_rden &amp;&amp; read_reject &amp;&amp; (PSTATE == 2'b00)) begin
+388        1/1                        axi_rvalid &lt;= 1'b1;
+389        1/1                        axi_rresp &lt;= 2'b10;
+390                               end
+391        1/1                    else if (!PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10)) begin
+392                     	          // Valid read data is available at the read data bus
+393        1/1          	          axi_rvalid &lt;= 1'b1;
+394                     	          //axi_rresp  &lt;= 2'b0; // 'OKAY' response
+395        1/1          	          axi_rresp  &lt;= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+396                     	      end   
+397        1/1          	      else if (axi_rvalid &amp;&amp; S_AXI_RREADY) begin
+398                     	          // Read data is accepted by the master
+399        1/1          	          axi_rvalid &lt;= 1'b0;
+400                     	      end                
+                        MISSING_ELSE
+401                     	    end
+402                     	end    
+403                     
+404                     	// Implement memory mapped register select and read logic generation
+405                     	// Slave register read enable is asserted when valid address is available
+406                     	// and the slave is ready to accept the read address.
+407                     	assign slv_reg_rden = axi_arready &amp; S_AXI_ARVALID &amp; ~axi_rvalid;
+408                     	//always @(*)
+409                     	//begin
+410                     	//      // Address decoding for reading registers
+411                     	//      case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
+412                     	//        2'h0   : reg_data_out &lt;= slv_reg0;
+413                     	//        2'h1   : reg_data_out &lt;= slv_reg1;
+414                     	//        2'h2   : reg_data_out &lt;= slv_reg2;
+415                     	//        2'h3   : reg_data_out &lt;= slv_reg3;
+416                     	//        default : reg_data_out &lt;= 0;
+417                     	//      endcase
+418                     	//end
+419                     
+420                     	// Output register or memory read data
+421                     	//always @( posedge S_AXI_ACLK )
+422                     	//begin
+423                     	//  if ( S_AXI_ARESETN == 1'b0 )
+424                     	//    begin
+425                     	//      axi_rdata  &lt;= 0;
+426                     	//    end 
+427                     	//  else
+428                     	//    begin    
+429                     	//      // When there is a valid read address (S_AXI_ARVALID) with 
+430                     	//      // acceptance of read address by the slave (axi_arready), 
+431                     	//      // output the read dada 
+432                     	//      if (slv_reg_rden)
+433                     	//        begin
+434                     	//          axi_rdata &lt;= reg_data_out;     // register read data
+435                     	//        end   
+436                     	//    end
+437                     	//end    
+438                     
+439                     	// Add user logic here
+440                     
+441                     	always @( posedge S_AXI_ACLK ) begin
+442        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+443        1/1                      PADDR &lt;= 0;
+444        1/1                      apb_prot &lt;= 0;
+445                             end
+446                     	    else begin    
+447        1/1          	        if (slv_reg_rden &amp;&amp; (PSTATE == 2'b00)) begin
+448        1/1                          PADDR &lt;= S_AXI_ARADDR;
+449        1/1                          apb_prot &lt;= S_AXI_ARPROT;
+450                                 end
+451        1/1                      else if (slv_reg_wren &amp;&amp; (PSTATE == 2'b00)) begin
+452        1/1                          PADDR &lt;= S_AXI_AWADDR;
+453        1/1                          apb_prot &lt;= S_AXI_AWPROT;
+454                                 end
+                        MISSING_ELSE
+455                     	    end    
+456                     	end    
+457                     	
+458                         // ==== FIX (1/2): on write, select the upper/lower 16-bit byte lane using address[1] ====
+459                         // Previously it always looked only at S_AXI_WDATA[15:0]/WSTRB[1:0], but for
+460                         // non-word-aligned registers such as offset 2/6, the AXI spec puts the actual data on [31:16]/WSTRB[3:2],
+461                         // so the correct lane must be selected based on S_AXI_AWADDR[1].
+462                         always @( posedge S_AXI_ACLK ) begin
+463        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+464        1/1                      PWDATA &lt;= 0;
+465        1/1                      PSTRB &lt;= 0;
+466                             end
+467                             else begin
+468        1/1                      if (slv_reg_rden &amp;&amp; (PSTATE == 2'b00)) begin
+469        1/1                          PWDATA &lt;= 0;
+470        1/1                          PSTRB &lt;= 0;
+471                                 end
+472        1/1                      else if (slv_reg_wren &amp;&amp; (PSTATE == 2'b00)) begin
+473        1/1                          if (S_AXI_AWADDR[1]) begin
+474        1/1                              PWDATA &lt;= S_AXI_WDATA[31:16];
+475        1/1                              PSTRB  &lt;= S_AXI_WSTRB[3:2];
+476                                     end else begin
+477        1/1                              PWDATA &lt;= S_AXI_WDATA[15:0];
+478        1/1                              PSTRB  &lt;= S_AXI_WSTRB[1:0];
+479                                     end
+480                                 end
+                        MISSING_ELSE
+481                             end
+482                         end
+483                         always @( posedge S_AXI_ACLK ) begin
+484        1/1                  if ( S_AXI_ARESETN == 1'b0 )begin
+485        1/1                      PSTATE &lt;= 0;
+486        1/1                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+487        1/1                      axi_rdata &lt;= 0;
+488                             end
+489                             else begin
+490        1/1                      case (PSTATE)
+491                                     2'b00 : begin
+492        1/1                              if (slv_reg_rden) begin
+493        1/1                                  if (read_reject) begin
+494        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+495        1/1                                      axi_rdata &lt;= 0;
+496                                             end else begin
+497        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b100;
+498        1/1                                      PSTATE &lt;= 2'b01;
+499                                             end
+500                                         end
+501        1/1                              else if (slv_reg_wren) begin
+502        1/1                                  if (write_reject) begin
+503        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b000;
+504                                             end else begin
+505        1/1                                      {PSEL,PENABLE,PWRITE} &lt;= 3'b101;
+506        1/1                                      PSTATE &lt;= 2'b01;
+507                                             end
+508                                         end
+509        1/1                              else {PSEL,PENABLE,PWRITE} &lt;= {3'b000};
+510                                     end
+511                                     2'b01 : begin
+512        1/1                                  {PSEL,PENABLE,PWRITE} &lt;= {2'b11,PWRITE};
+513        1/1                                  PSTATE &lt;= 2'b10;
+514                                     end
+515                                     2'b10 : begin
+516        1/1                              if(PREADY == 1'b1)begin
+517        1/1                                  {PSEL,PENABLE,PWRITE} &lt;= {2'b00,PWRITE};
+518        1/1                                  PSTATE &lt;= 2'b00;
+519                                             // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                             // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                             // PADDR is already latched with the read address at this point, so it can be used as is.
+522        1/1                                  if(!PWRITE) begin
+523        1/1                                      if (PADDR[1])
+524        1/1                                          axi_rdata &lt;= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} &lt;&lt; 16;
+525                                                 else
+526        1/1                                          axi_rdata &lt;= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+527                                             end
+                        MISSING_ELSE
+528                                         end
+                        MISSING_ELSE
+529                                     end
+530                                     default : begin
+531        <font color = "red">0/1     ==>                          {PSEL,PENABLE,PWRITE} &lt;= {3'b000};</font>
+532        <font color = "red">0/1     ==>                          PSTATE &lt;= 2'b00;</font>
+</pre>
+<hr>
+<a name="inst_tag_4_Cond"></a>
+<b>Cond Coverage for Instance : <a href="mod4.html#inst_tag_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">Conditions</td><td>125</td><td>108</td><td>86.40</td></tr>
+<tr class="s8"><td class="lf">Logical</td><td>125</td><td>108</td><td>86.40</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       116
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == UART))
+             --1-   -----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       116
+ SUB-EXPRESSION (PADDR[14:12] == UART)
+                -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       117
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == GPIO))
+             --1-   -----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       117
+ SUB-EXPRESSION (PADDR[14:12] == GPIO)
+                -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       118
+ EXPRESSION (PSEL &amp; (PADDR[14:12] == TIMER))
+             --1-   -----------2-----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       118
+ SUB-EXPRESSION (PADDR[14:12] == TIMER)
+                -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       162
+ EXPRESSION (PSTATE != 2'b0)
+            --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       165
+ EXPRESSION (((!axi_awready)) &amp;&amp; S_AXI_AWVALID &amp;&amp; S_AXI_WVALID &amp;&amp; aw_en &amp;&amp; ((!apb_busy)) &amp;&amp; ((!S_AXI_ARVALID)) &amp;&amp; ((!axi_arready)) &amp;&amp; ((!axi_rvalid)))
+             --------1-------    ------2------    ------3-----    --4--    ------5------    ---------6--------    --------7-------    -------8-------
+</pre>
+<table class="noborder">
+<col span="8" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>-5-</th><th>-6-</th><th>-7-</th><th>-8-</th><th>Status</th>                      </tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       168
+ EXPRESSION (((!axi_arready)) &amp;&amp; S_AXI_ARVALID &amp;&amp; ((!axi_rvalid)) &amp;&amp; ((!apb_busy)) &amp;&amp; aw_en &amp;&amp; ((!axi_awready)) &amp;&amp; ((!axi_wready)))
+             --------1-------    ------2------    -------3-------    ------4------    --5--    --------6-------    -------7-------
+</pre>
+<table class="noborder">
+<col span="7" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>-5-</th><th>-6-</th><th>-7-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       171
+ EXPRESSION (S_AXI_AWADDR[0] || (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2]))))
+             -------1-------    --------------------------------2--------------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       171
+ SUB-EXPRESSION (S_AXI_AWADDR[1] ? ((|S_AXI_WSTRB[1:0])) : ((|S_AXI_WSTRB[3:2])))
+                 -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       193
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       206
+ EXPRESSION (S_AXI_BREADY &amp;&amp; axi_bvalid)
+             ------1-----    -----2----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       221
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       238
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       260
+ EXPRESSION (axi_wready &amp;&amp; S_AXI_WVALID &amp;&amp; axi_awready &amp;&amp; S_AXI_AWVALID)
+             -----1----    ------2-----    -----3-----    ------4------
+</pre>
+<table class="noborder">
+<col span="4" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>Status</th>                      </tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       321
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       327
+ EXPRESSION (slv_reg_wren &amp;&amp; write_reject &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    ------2-----    --------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       327
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       331
+ EXPRESSION (PWRITE &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10))
+             ---1--    ---2--    --------3--------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       331
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       335
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       338
+ EXPRESSION (S_AXI_BREADY &amp;&amp; axi_bvalid)
+             ------1-----    -----2----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       355
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       381
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       387
+ EXPRESSION (slv_reg_rden &amp;&amp; read_reject &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    -----2-----    --------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       387
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       391
+ EXPRESSION (((!PWRITE)) &amp;&amp; PREADY &amp;&amp; (PSTATE == 2'b10))
+             -----1-----    ---2--    --------3--------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       391
+ SUB-EXPRESSION (PSTATE == 2'b10)
+                --------1--------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       395
+ EXPRESSION (PSLVERR ? 2'b10 : 2'b0)
+             ---1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       397
+ EXPRESSION (axi_rvalid &amp;&amp; S_AXI_RREADY)
+             -----1----    ------2-----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       407
+ EXPRESSION (axi_arready &amp; S_AXI_ARVALID &amp; ((~axi_rvalid)))
+             -----1-----   ------2------   -------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       442
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       447
+ EXPRESSION (slv_reg_rden &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       447
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       451
+ EXPRESSION (slv_reg_wren &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       451
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       463
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       468
+ EXPRESSION (slv_reg_rden &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       468
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       472
+ EXPRESSION (slv_reg_wren &amp;&amp; (PSTATE == 2'b0))
+             ------1-----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       472
+ SUB-EXPRESSION (PSTATE == 2'b0)
+                --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       484
+ EXPRESSION (S_AXI_ARESETN == 1'b0)
+            -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       516
+ EXPRESSION (PREADY == 1'b1)
+            --------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th>                      </tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="inst_tag_4_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Totals</td>
+<td class="rt">54</td>
+<td class="rt">48</td>
+<td class="rt">88.89 </td>
+</tr><tr class="s6">
+<td>Total Bits</td>
+<td class="rt">690</td>
+<td class="rt">476</td>
+<td class="rt">68.99 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">345</td>
+<td class="rt">240</td>
+<td class="rt">69.57 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">345</td>
+<td class="rt">236</td>
+<td class="rt">68.41 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Ports</td>
+<td class="rt">33</td>
+<td class="rt">29</td>
+<td class="rt">87.88 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">456</td>
+<td class="rt">328</td>
+<td class="rt">71.93 </td>
+</tr><tr class="s7">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">228</td>
+<td class="rt">165</td>
+<td class="rt">72.37 </td>
+</tr><tr class="s7">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">228</td>
+<td class="rt">163</td>
+<td class="rt">71.49 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s9">
+<td>Signals</td>
+<td class="rt">21</td>
+<td class="rt">19</td>
+<td class="rt">90.48 </td>
+</tr><tr class="s6">
+<td>Signal Bits</td>
+<td class="rt">234</td>
+<td class="rt">148</td>
+<td class="rt">63.25 </td>
+</tr><tr class="s6">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">117</td>
+<td class="rt">75</td>
+<td class="rt">64.10 </td>
+</tr><tr class="s6">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">117</td>
+<td class="rt">73</td>
+<td class="rt">62.39 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>S_AXI_ACLK</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARESETN</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[30]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_AWREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_WDATA[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WSTRB[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_WREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BRESP[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BRESP[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_BREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[30]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>S_AXI_ARREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RDATA[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RRESP[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RRESP[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RVALID</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>S_AXI_RREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PADDR[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PADDR[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_UART</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_GPIO</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSEL_TIMER</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PENABLE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PWRITE</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PWDATA[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PSTRB[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PPROT[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>PRDATA[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PREADY</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>PSLVERR</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Exclude Annotation</td></tr><tr>
+<td>PSEL</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_awaddr[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_awready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_wready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_bresp[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td>Response encoding: only OKAY (2'b00) and SLVERR (2'b10) are produced, bit 0 is constant 0 by design</td>
+</tr><tr>
+<td>axi_bresp[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_bvalid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[8]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[11:9]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[13:12]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[29:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[30]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_araddr[31]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td></td>
+</tr><tr>
+<td>axi_arready</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_rdata[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_rresp[0]</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td class="wht cl">Unreachable</td>
+<td></td>
+</tr><tr>
+<td>axi_rresp[1]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>axi_rvalid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>slv_reg0[31:0]</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td>Dead Xilinx template register file: declared, every driver is commented out</td>
+</tr><tr>
+<td>slv_reg1[31:0]</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td></td>
+</tr><tr>
+<td>slv_reg2[31:0]</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td></td>
+</tr><tr>
+<td>slv_reg3[31:0]</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td></td>
+</tr><tr>
+<td>slv_reg_rden</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>slv_reg_wren</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>reg_data_out[31:0]</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td class="wht cl">Excluded</td>
+<td></td>
+</tr><tr>
+<td>aw_en</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>PSTATE[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>apb_prot[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>apb_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>write_grant</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>read_grant</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>write_reject</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr><tr>
+<td>read_reject</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td></td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_4_FSM"></a>
+<b>FSM Coverage for Instance : <a href="mod4.html#inst_tag_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></b><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: PSTATE</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s7">
+<td>Transitions</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: PSTATE</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>'h0</td>
+<td class="rt">485</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h1</td>
+<td class="rt">498</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h2</td>
+<td class="rt">513</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>'h0->'h1</td>
+<td class="rt">498</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>'h1->'h0</td>
+<td class="rt">485</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h1->'h2</td>
+<td class="rt">513</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>'h2->'h0</td>
+<td class="rt">485</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="inst_tag_4_Branch"></a>
+<b>Branch Coverage for Instance : <a href="mod4.html#inst_tag_4" >tb_top.dut.APB_v1_0_S00_AXI_inst<img src="ex.gif" class="icon"></a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">46</td>
+<td class="rt">45</td>
+<td class="rt">97.83 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">193</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">221</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">238</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">321</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">355</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">381</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">442</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">463</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">484</td>
+<td class="rt">12</td>
+<td class="rt">11</td>
+<td class="rt">91.67 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+193        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+194        	      axi_awready <= 1'b0;
+           <font color = "green">	      ==></font>
+195        	      aw_en <= 1'b1;
+196        	  end 
+197        	  else begin    
+198        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+199        	          // slave is ready to accept write address when 
+200        	          // there is a valid write address and write data
+201        	          // on the write address and data bus. This design 
+202        	          // expects no outstanding transactions. 
+203        	          axi_awready <= 1'b1;
+           <font color = "green">	          ==></font>
+204        	          aw_en <= 1'b0;
+205        	        end
+206        	        else if (S_AXI_BREADY && axi_bvalid) begin
+           	             <font color = "green">-3-</font>  
+207        	              aw_en <= 1'b1;
+           <font color = "green">	              ==></font>
+208        	              axi_awready <= 1'b0;
+209        	            end
+210        	      else  begin
+211        	          axi_awready <= 1'b0;
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+221        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+222        	      axi_awaddr <= 0;
+           <font color = "green">	      ==></font>
+223        	    end 
+224        	  else begin    
+225        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+226        	          // Write Address latching 
+227        	          axi_awaddr <= S_AXI_AWADDR;
+           <font color = "green">	          ==></font>
+228        	        end
+           	        MISSING_ELSE
+           <font color = "green">	        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+238        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+239        	      axi_wready <= 1'b0;
+           <font color = "green">	      ==></font>
+240        	    end 
+241        	  else begin    
+242        	      if (write_grant) begin
+           	      <font color = "green">-2-</font>  
+243        	          // slave is ready to accept write data when 
+244        	          // there is a valid write address and write data
+245        	          // on the write address and data bus. This design 
+246        	          // expects no outstanding transactions. 
+247        	          axi_wready <= 1'b1;
+           <font color = "green">	          ==></font>
+248        	      end
+249        	      else begin axi_wready <= 1'b0; end
+           <font color = "green">	      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+321        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+322        	      axi_bvalid  <= 0;
+           <font color = "green">	      ==></font>
+323        	      axi_bresp   <= 2'b0;
+324        	    end 
+325        	  else begin    
+326        	      //if (axi_awready && S_AXI_AWVALID && ~axi_bvalid && axi_wready && S_AXI_WVALID)
+327        	      if (slv_reg_wren && write_reject && (PSTATE == 2'b00)) begin
+           	      <font color = "green">-2-</font>  
+328                      axi_bvalid <= 1'b1;
+           <font color = "green">              ==></font>
+329                      axi_bresp <= 2'b10;
+330                  end
+331                  else if (PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          <font color = "green">-3-</font>  
+332        	          // indicates a valid write response is available
+333        	          axi_bvalid <= 1'b1;
+334        	          //axi_bresp  <= 2'b0; // 'OKAY' response 
+335        	          axi_bresp  <= PSLVERR ? 2'b10 : 2'b00; // 'Slave Err or Okay' response 
+           	                                <font color = "green">-4-</font>  
+           	                                <font color = "green">==></font>  
+           	                                <font color = "green">==></font>  
+336        	        end                   // work error responses in future
+337        	      else begin
+338        	          if (S_AXI_BREADY && axi_bvalid) begin
+           	          <font color = "green">-5-</font>  
+339        	            //check if bready is asserted while bvalid is high) 
+340        	            //(there is a possibility that bready is always asserted high)   
+341        	              axi_bvalid <= 1'b0; 
+           <font color = "green">	              ==></font>
+342        	          end  
+           	          MISSING_ELSE
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+355        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+356        	      axi_arready <= 1'b0;
+           <font color = "green">	      ==></font>
+357        	      axi_araddr  <= 32'b0;
+358        	  end 
+359        	  else begin    
+360        	      if (read_grant) begin
+           	      <font color = "green">-2-</font>  
+361        	          // indicates that the slave has acceped the valid read address
+362        	          axi_arready <= 1'b1;
+           <font color = "green">	          ==></font>
+363        	          // Read address latching
+364        	          axi_araddr  <= S_AXI_ARADDR;
+365        	        end
+366        	      else begin
+367        	          axi_arready <= 1'b0;
+           <font color = "green">	          ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+381        	  if ( S_AXI_ARESETN == 1'b0 ) begin
+           	  <font color = "green">-1-</font>  
+382        	      axi_rvalid <= 0;
+           <font color = "green">	      ==></font>
+383        	      axi_rresp  <= 0;
+384        	  end 
+385        	  else begin    
+386        	      //if (axi_arready && S_AXI_ARVALID && ~axi_rvalid)
+387        	      if (slv_reg_rden && read_reject && (PSTATE == 2'b00)) begin
+           	      <font color = "green">-2-</font>  
+388                      axi_rvalid <= 1'b1;
+           <font color = "green">              ==></font>
+389                      axi_rresp <= 2'b10;
+390                  end
+391                  else if (!PWRITE && PREADY && (PSTATE == 2'b10)) begin
+                          <font color = "green">-3-</font>  
+392        	          // Valid read data is available at the read data bus
+393        	          axi_rvalid <= 1'b1;
+394        	          //axi_rresp  <= 2'b0; // 'OKAY' response
+395        	          axi_rresp  <= PSLVERR ? 2'b10 : 2'b00; // ' Slave Err or Okay' response
+           	                                <font color = "green">-4-</font>  
+           	                                <font color = "green">==></font>  
+           	                                <font color = "green">==></font>  
+396        	      end   
+397        	      else if (axi_rvalid && S_AXI_RREADY) begin
+           	           <font color = "green">-5-</font>  
+398        	          // Read data is accepted by the master
+399        	          axi_rvalid <= 1'b0;
+           <font color = "green">	          ==></font>
+400        	      end                
+           	      MISSING_ELSE
+           <font color = "green">	      ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+442                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+443                    PADDR <= 0;
+           <font color = "green">            ==></font>
+444                    apb_prot <= 0;
+445                end
+446        	    else begin    
+447        	        if (slv_reg_rden && (PSTATE == 2'b00)) begin
+           	        <font color = "green">-2-</font>  
+448                        PADDR <= S_AXI_ARADDR;
+           <font color = "green">                ==></font>
+449                        apb_prot <= S_AXI_ARPROT;
+450                    end
+451                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            <font color = "green">-3-</font>  
+452                        PADDR <= S_AXI_AWADDR;
+           <font color = "green">                ==></font>
+453                        apb_prot <= S_AXI_AWPROT;
+454                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+463                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+464                    PWDATA <= 0;
+           <font color = "green">            ==></font>
+465                    PSTRB <= 0;
+466                end
+467                else begin
+468                    if (slv_reg_rden && (PSTATE == 2'b00)) begin
+                       <font color = "green">-2-</font>  
+469                        PWDATA <= 0;
+           <font color = "green">                ==></font>
+470                        PSTRB <= 0;
+471                    end
+472                    else if (slv_reg_wren && (PSTATE == 2'b00)) begin
+                            <font color = "green">-3-</font>  
+473                        if (S_AXI_AWADDR[1]) begin
+                           <font color = "green">-4-</font>  
+474                            PWDATA <= S_AXI_WDATA[31:16];
+           <font color = "green">                    ==></font>
+475                            PSTRB  <= S_AXI_WSTRB[3:2];
+476                        end else begin
+477                            PWDATA <= S_AXI_WDATA[15:0];
+           <font color = "green">                    ==></font>
+478                            PSTRB  <= S_AXI_WSTRB[1:0];
+479                        end
+480                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+484                if ( S_AXI_ARESETN == 1'b0 )begin
+                   <font color = "green">-1-</font>  
+485                    PSTATE <= 0;
+           <font color = "green">            ==></font>
+486                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+487                    axi_rdata <= 0;
+488                end
+489                else begin
+490                    case (PSTATE)
+                       <font color = "red">-2-</font>  
+491                        2'b00 : begin
+492                            if (slv_reg_rden) begin
+                               <font color = "green">-3-</font>  
+493                                if (read_reject) begin
+                                   <font color = "green">-4-</font>  
+494                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+           <font color = "green">                            ==></font>
+495                                    axi_rdata <= 0;
+496                                end else begin
+497                                    {PSEL,PENABLE,PWRITE} <= 3'b100;
+           <font color = "green">                            ==></font>
+498                                    PSTATE <= 2'b01;
+499                                end
+500                            end
+501                            else if (slv_reg_wren) begin
+                                    <font color = "green">-5-</font>  
+502                                if (write_reject) begin
+                                   <font color = "green">-6-</font>  
+503                                    {PSEL,PENABLE,PWRITE} <= 3'b000;
+           <font color = "green">                            ==></font>
+504                                end else begin
+505                                    {PSEL,PENABLE,PWRITE} <= 3'b101;
+           <font color = "green">                            ==></font>
+506                                    PSTATE <= 2'b01;
+507                                end
+508                            end
+509                            else {PSEL,PENABLE,PWRITE} <= {3'b000};
+           <font color = "green">                    ==></font>
+510                        end
+511                        2'b01 : begin
+512                                {PSEL,PENABLE,PWRITE} <= {2'b11,PWRITE};
+           <font color = "green">                        ==></font>
+513                                PSTATE <= 2'b10;
+514                        end
+515                        2'b10 : begin
+516                            if(PREADY == 1'b1)begin
+                               <font color = "green">-7-</font>  
+517                                {PSEL,PENABLE,PWRITE} <= {2'b00,PWRITE};
+518                                PSTATE <= 2'b00;
+519                                // ==== FIX (2/2): on read, use PADDR[1] to place the response data
+520                                // into the upper/lower 16-bit lane the CPU will actually read ====
+521                                // PADDR is already latched with the read address at this point, so it can be used as is.
+522                                if(!PWRITE) begin
+                                   <font color = "green">-8-</font>  
+523                                    if (PADDR[1])
+                                       <font color = "green">-9-</font>  
+524                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA} << 16;
+           <font color = "green">                                ==></font>
+525                                    else
+526                                        axi_rdata <= {{(C_S_AXI_DATA_WIDTH-APB_WIDTH){1'b0}}, PRDATA};
+           <font color = "green">                                ==></font>
+527                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+528                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+529                        end
+530                        default : begin
+531                                {PSEL,PENABLE,PWRITE} <= {3'b000};
+           <font color = "red">                        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b00 </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b01 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_4">
+    <li>
+      <a href="#inst_tag_4_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_4_Cond">Cond</a>    </li>
+    <li>
+      <a href="#inst_tag_4_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_4_FSM">FSM</a>    </li>
+    <li>
+      <a href="#inst_tag_4_Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_APB_v1_0_S00_AXI">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

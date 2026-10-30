@@ -1,0 +1,33 @@
+Dashboard
+
+Date: Mon Oct 19 09:40:04 2026
+
+User: pedu23
+
+Version: W-2024.09-SP2
+Command line: urg -dir coverage.vdb -report coverage_report -format both -elfile cov/bridge_toggle.el
+Number of tests: 41
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
+ 85.19  98.21  86.40  72.73  75.00  98.00  80.80 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME      
+ 86.07  98.21  86.40  72.73  75.00  98.00 tb_top(X) 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 83.11  98.21  86.40  57.94  75.00  98.00 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+ 80.80  80.80     1      
+
