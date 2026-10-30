@@ -25,6 +25,7 @@ The files in this directory are the **fixed versions** used for UVM verification
 | B04 | Supported scope fixed as a 16-bit halfword register bridge: odd addresses and strobes outside the selected halfword return SLVERR without an APB transfer. It is not a two-transfer 32→16 width converter. |
 | B05 | Accepted `AxPROT` is held and driven on `PPROT` through the APB transfer. |
 | B06 | Declaration order cleaned up so the files compile without ordering errors. |
+| Address map | Decode codes renumbered and unused slaves removed. Upstream: UART 1, SCCB 2, GPIO 3, AI 4, TIMER 5. This repository: UART 1, GPIO 2, TIMER 3; SCCB and AI ports were removed (they had no response path in the upstream wrapper). The fixed RTL is therefore **not a drop-in replacement** for firmware that uses the upstream GPIO / TIMER addresses. |
 
 See the top-level [README](../../README.md) for how each item was reproduced and verified.
 

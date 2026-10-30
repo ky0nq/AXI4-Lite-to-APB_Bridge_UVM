@@ -37,6 +37,10 @@ wrapper가 `PADDR[14:12]`로 slave를 선택한 뒤 `PRDATA`/`PSLVERR`을 AXI R/
 
 32-bit 요청을 APB 2회로 나누는 범용 width converter가 아니라, **16-bit halfword register 전용 bridge**로 지원 범위를 정했습니다.
 
+> **주소 맵 변경** : upstream은 UART 1 · SCCB 2 · GPIO 3 · AI 4 · TIMER 5였고, SCCB · AI는 wrapper에 응답 경로가 없었습니다.
+> 수정본은 미사용 slave를 제거하고 UART 1 · GPIO 2 · TIMER 3으로 정리했습니다.
+> 따라서 upstream 주소를 쓰는 firmware에 그대로 넣으려면 주소 정의를 함께 바꿔야 합니다. 변경 내역은 [`rtl/SOURCE.md`](axi4lite_apb_bridge_uvm/rtl/SOURCE.md)에 있습니다.
+
 ## 원본 RTL 분석 항목 (B01–B06)
 
 | ID | 분류 | 내용 | 처리 |
