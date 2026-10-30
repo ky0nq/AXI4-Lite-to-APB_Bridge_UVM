@@ -11,3 +11,6 @@ axi4lite_apb_bridge_uvm/.fsm.sch.verilog.xml
 *.fsdb
 .DS_Store
 __MACOSX/
+
+# not published
+demo/
