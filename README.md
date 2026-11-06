@@ -12,6 +12,7 @@ UVM 환경에서 regression과 Code/Functional Coverage closure까지 수행한 
 | 검증 | UVM 1.1d · Scoreboard · Protocol Checker · Constrained Random · Code/Functional Coverage |
 | 도구 | Synopsys VCS W-2024.09-SP2 · Verdi · urg |
 | Upstream | [ky0nq/V-TRAX-Vision-AI-SoC](https://github.com/ky0nq/V-TRAX-Vision-AI-SoC) `Zybo_IP/IP_AXI_APB/src/` |
+| 관련 프로젝트 | [APB_VIP_UVM](https://github.com/ky0nq/APB_VIP_UVM) — APB4 Master/Slave VIP |
 
 ## 핵심 성과
 
@@ -77,6 +78,10 @@ tb_top
      └─ coverage    apb_coverage · axi_coverage · bridge_coverage (covergroup 6개)
 ```
 
+<p align="center">
+  <img src="docs/uvm_structure.png" alt="UVM Structure" width="640">
+</p>
+
 | Covergroup | 관측 대상 |
 |---|---|
 | `apb_coverage.transfer_cg` | slave × direction × lane × strobe × wait(0 / 1 / 2–3 / 4–15 / 16+) × error |
@@ -104,6 +109,10 @@ PASS 조건은 UVM_ERROR / UVM_FATAL 0건이고, 검사한 응답이 1개 이상
 | `bridge_corner_test` | wait 16–20, SETUP 중 reset, B/R 응답 대기 중 reset | 59 | PASS |
 | `bridge_overlap_test` | read/write 동시 요청 0–14 cycle skew sweep, B/R stall (B01) | 402 | PASS |
 
+<p align="center">
+  <img src="docs/regression_summary.png" alt="Regression Summary: PASS 8 / 8" width="560">
+</p>
+
 ## Coverage closure
 
 Regression을 4회차에 걸쳐 확장하며 coverage hole을 분석했습니다.
@@ -115,6 +124,10 @@ Regression을 4회차에 걸쳐 확장하며 coverage hole을 분석했습니다
 | ver3 | regress 7개 | 96.70 | 98.21 | 84.00 | 100.00 | 100.00 | 98.00 | 100.00 |
 | ver4 | regress 8개 | **97.24** | 98.21 | 87.20 | 100.00 | 100.00 | 98.00 | 100.00 |
 
+| ver4 Coverage Summary | Covergroup (GROUP 100%) |
+|---|---|
+| <img src="docs/coverage_ver4.png" alt="Coverage Summary ver4" width="100%"> | <img src="docs/covergroup_100.png" alt="Covergroup 100%" width="100%"> |
+
 남은 LINE · BRANCH · COND hole은 `modinfo.txt`와 RTL grant/READY 로직을 대조해 **모두 도달 불가**로 판정했고,
 근거를 남긴 뒤 exclusion을 적용하면 LINE · BRANCH · COND도 100%입니다.
 Exclusion은 자극으로 채울 수 없는 항목에만 사용했습니다.
@@ -122,6 +135,22 @@ Exclusion은 자극으로 채울 수 없는 항목에만 사용했습니다.
 > 저장소의 `coverage_report/`와 `regress.log`는 마지막으로 실행한 **multi-seed 회귀**
 > (`bridge_stress_test` · `bridge_overlap_test` × seed 1–20) 결과입니다.
 > 위 표의 ver4 수치는 8개 test 전체 regression 기준이므로, 재현하려면 아래처럼 `make regress` 후 `make report`를 실행하세요.
+
+## 파형
+
+UART · GPIO · TIMER slave 각각에 대해 AXI4-Lite 요청이 APB SETUP → ACCESS로 변환되는 과정을 Verdi로 확인했습니다.
+
+- UART
+
+<img src="docs/wave_uart.png" alt="Waveform UART" width="100%">
+
+- GPIO
+
+<img src="docs/wave_gpio.png" alt="Waveform GPIO" width="100%">
+
+- TIMER
+
+<img src="docs/wave_timer.png" alt="Waveform TIMER" width="100%">
 
 ## 실행 방법
 
