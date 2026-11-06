@@ -1,0 +1,11 @@
+# GitHub 언어 통계에서 시뮬레이터 자동 생성 파일 제외
+# VCS/Verdi(URG) Coverage HTML 리포트
+axi4lite_apb_bridge_uvm/coverage_report/** linguist-generated=true
+
+# VCS coverage exclude 파일(.el)이 Emacs Lisp로 잡히지 않도록 제외
+*.el linguist-detectable=false
+
+# SystemVerilog / Verilog 명시
+*.sv  linguist-language=SystemVerilog
+*.svh linguist-language=SystemVerilog
+*.v   linguist-language=Verilog
